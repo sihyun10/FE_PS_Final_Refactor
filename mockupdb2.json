@@ -1,0 +1,476 @@
+{
+  "pdfupload": {
+    "summary": {},
+    "pdf_summary": {
+      "ownership_list": [
+        {
+          "owner_name": "차주룡 (소유자)",
+          "resident_id": "720115-*******",
+          "ownership_share": "단독소유",
+          "address": "경기도 광주시 태봉로 61, 206동 1804호(태전동,태전지구2단지성원아파트)",
+          "rank": "2"
+        }
+      ],
+      "without_owner": [{}],
+      "rights_other_than_ownership": [
+        {
+          "rank": "14",
+          "purpose": "근저당권설정",
+          "reception_inform": "2020년7월8일 제117993호",
+          "major": "채권최고액 금120,000,000원  근저당권자 주식회사안양저축은행",
+          "owner": "차주룡"
+        },
+        {
+          "rank": "17",
+          "purpose": "근저당권설정",
+          "reception_inform": "2021년2월4일 제19409호",
+          "major": "채권최고액 금60,000,000원  근저당권자 주식회사안양저축은행",
+          "owner": "차주룡"
+        },
+        {
+          "rank": "18",
+          "purpose": "근저당권설정",
+          "reception_inform": "2021년12월30일 제249718호",
+          "major": "채권최고액 금8,500,000원  근저당권자 오창열",
+          "owner": "차주룡"
+        },
+        {
+          "rank": "19",
+          "purpose": "근저당권설정",
+          "reception_inform": "2022년2월4일 제16615호",
+          "major": "채권최고액 금15,000,000원  근저당권자 오창열",
+          "owner": "차주룡"
+        },
+        {
+          "rank": "20",
+          "purpose": "임차권설정",
+          "reception_inform": "2022년11월29일 제175358호",
+          "major": "임차보증금 금440,000,000원  임차권자 최선녀",
+          "owner": "차주룡"
+        }
+      ]
+    },
+    "gap_info": {
+      "recent_registration": [
+        {
+          "rank": "2-4",
+          "registration_purpose": "2번등기명의인표시변경",
+          "reception_inform": "2021년2월4일 제19397호",
+          "registration_cause": "2020년7월21일 주소변경",
+          "notes": {
+            "note": [
+              "차주룡의 주소",
+              "경기도 광주시 태봉로 61, 206동 1804호(태전동,태전지구2단지성원아파트)"
+            ],
+            "canceled": []
+          }
+        }
+      ],
+      "ownership_history": [
+        {
+          "rank": "1",
+          "registration_purpose": "소유권보존",
+          "reception_inform": "2008년5월7일 제19334호",
+          "registration_cause": "",
+          "notes": {
+            "note": [
+              "소유자 홍복근 560425-*******",
+              "서울특별시 관악구 신림동 1735 관악산휴먼시아 208-804"
+            ],
+            "canceled": []
+          }
+        },
+        {
+          "rank": "2",
+          "registration_purpose": "소유권이전",
+          "reception_inform": "2017년6월29일 제119877호",
+          "registration_cause": "2017년3월31일 매매",
+          "notes": {
+            "note": ["소유자 차주룡 720115-*******", "거래가액 금459,000,000원"],
+            "canceled": ["서울특별시 관악구 신림로29길 8, 111동 1305호 (신림동,신림현대아파트)"]
+          }
+        },
+        {
+          "rank": "2-1",
+          "registration_purpose": "2번등기명의인표시경정",
+          "reception_inform": "2018년3월28일 제55824호",
+          "registration_cause": "2017년6월29일 신청착오",
+          "notes": {
+            "note": [],
+            "canceled": [
+              "차주룡의 주소",
+              "서울특별시 관악구 난곡로 55, 208동 804호(신림동,관악산휴먼시아)"
+            ]
+          }
+        },
+        {
+          "rank": "2-2",
+          "registration_purpose": "2번등기명의인표시변경",
+          "reception_inform": "2018년11월12일 제206284호",
+          "registration_cause": "2018년10월31일 전거",
+          "notes": {
+            "note": [],
+            "canceled": [
+              "차주룡의 주소",
+              "경기도 광주시 태봉로 61, 206동 1804호 (태전동,태전지구2단지성원아파트)"
+            ]
+          }
+        },
+        {
+          "rank": "2-3 ",
+          "registration_purpose": "2번등기명의인표시변경",
+          "reception_inform": "2020년7월8일 제117948호",
+          "registration_cause": "2020년5월29일 주소변경",
+          "notes": {
+            "note": [],
+            "canceled": ["차주룡의 주소", "서울특별시 관악구 원신2길 62-5(신림동)"]
+          }
+        },
+        {
+          "rank": "2-4",
+          "registration_purpose": "2번등기명의인표시변경",
+          "reception_inform": "2021년2월4일 제19397호",
+          "registration_cause": "2020년7월21일 주소변경",
+          "notes": {
+            "note": [
+              "차주룡의 주소",
+              "경기도 광주시 태봉로 61, 206동 1804호(태전동,태전지구2단지성원아파트)"
+            ],
+            "canceled": []
+          }
+        }
+      ]
+    },
+    "eul_info": {
+      "mortgage_info": [
+        {
+          "collateral_amount": "203,500,000/4건",
+          "principal_amount_estimate": "185,000,000원 예상(1.1%)"
+        }
+      ],
+      "leasehold_info": [
+        {
+          "registration_purpose": "-",
+          "mortgage": "-",
+          "debtor_registration_number": "-"
+        }
+      ],
+      "mortgage_detail": [
+        {
+          "debtor_name": "차주룡",
+          "debtor_address": "경기도 광주시 태봉로 61, 206동 1804호(태전동,태전지구2단지성원아파트)",
+          "registration_purpose": "근저당권설정",
+          "leasehold_name": ["주식회사안양저축은행", "오창열"],
+          "debtor_registration_number": ["134111-0008850", "671103-*******"]
+        },
+        {
+          "debtor_name": "차주룡",
+          "debtor_address": "경기도 광주시 태봉로 61, 206동 1804호(태전동,태전지구2단지성원아파트)",
+          "registration_purpose": "임차권설정",
+          "leasehold_name": ["최선녀 "],
+          "debtor_registration_number": [""]
+        }
+      ],
+      "rights_other_than_ownership": [
+        {
+          "rank": {
+            "value": "1",
+            "isCanceled": true
+          },
+          "registration_purpose": "근저당권설정",
+          "reception_information": "2008년5월7일 제20172호",
+          "major_registration_items": ["채권최고액 금31,200,000원", "근저당권자 주식회사우리은행"],
+          "target_owner": "홍복근"
+        },
+        {
+          "rank": {
+            "value": "2",
+            "isCanceled": true
+          },
+          "registration_purpose": "근저당권설정",
+          "reception_information": "2008년5월7일 제21647호",
+          "major_registration_items": [
+            "채권최고액 금378,000,000원",
+            "근저당권자 농업협동조합중앙회"
+          ],
+          "target_owner": "홍복근"
+        },
+        {
+          "rank": {
+            "value": "2-1",
+            "isCanceled": true
+          },
+          "registration_purpose": "2번근저당권변경",
+          "reception_information": "2009년5월6일 제15833호",
+          "major_registration_items": ["채권최고액 금288,000,000원"],
+          "target_owner": ""
+        },
+        {
+          "rank": {
+            "value": "2-2",
+            "isCanceled": true
+          },
+          "registration_purpose": "2번근저당권변경",
+          "reception_information": "2011년7월1일 제25584호",
+          "major_registration_items": ["채권최고액 금206,400,000원"],
+          "target_owner": ""
+        },
+        {
+          "rank": {
+            "value": "2-3",
+            "isCanceled": true
+          },
+          "registration_purpose": "2번근저당권이전",
+          "reception_information": "2015년7월2일 제183252호",
+          "major_registration_items": ["근저당권자 농협은행주식회사"],
+          "target_owner": ""
+        },
+        {
+          "rank": {
+            "value": "2-4",
+            "isCanceled": true
+          },
+          "registration_purpose": "2번근저당권변경",
+          "reception_information": "2015년7월2일일 제183253호",
+          "major_registration_items": ["채권최고액 금55,200,000원"],
+          "target_owner": ""
+        },
+        {
+          "rank": {
+            "value": "3",
+            "isCanceled": false
+          },
+          "registration_purpose": "1번근저당권설정등기말소",
+          "reception_information": "2009년4월14일 제12806호",
+          "major_registration_items": [],
+          "target_owner": ""
+        },
+        {
+          "rank": {
+            "value": "4",
+            "isCanceled": false
+          },
+          "registration_purpose": "2번근저당권설정등기말소",
+          "reception_information": "2017년6월29일 제119173호",
+          "major_registration_items": [],
+          "target_owner": ""
+        },
+        {
+          "rank": {
+            "value": "5",
+            "isCanceled": true
+          },
+          "registration_purpose": "근저당권설정",
+          "reception_information": "2017년6월29일 제119878호",
+          "major_registration_items": [
+            "채권최고액 금369,600,000원",
+            " 근저당권자 주식회사우리은행"
+          ],
+          "target_owner": "차주룡"
+        },
+        {
+          "rank": {
+            "value": "6",
+            "isCanceled": true
+          },
+          "registration_purpose": "근저당권설정",
+          "reception_information": "2018년3월28일 제55825호",
+          "major_registration_items": [
+            "채권최고액 금90,000,000원",
+            "근저당권자 주식회사비케이존대부"
+          ],
+          "target_owner": "차주룡"
+        },
+        {
+          "rank": {
+            "value": "6-1",
+            "isCanceled": true
+          },
+          "registration_purpose": "6번근저당권부근질권",
+          "reception_information": "2018년3월28일 제55826호",
+          "major_registration_items": [
+            "채권최고액 금90,000,000원",
+            "채권자 제이비우리캐피탈주식회사"
+          ],
+          "target_owner": "주식회사비케이존대부"
+        },
+        {
+          "rank": {
+            "value": "7",
+            "isCanceled": false
+          },
+          "registration_purpose": "6-1번근질권등기말소",
+          "reception_information": "2018년10월30일 제197928호",
+          "major_registration_items": [],
+          "target_owner": ""
+        },
+        {
+          "rank": {
+            "value": "8",
+            "isCanceled": false
+          },
+          "registration_purpose": "6번근저당권설정등기말소",
+          "reception_information": "2018년10월30일 제197929호",
+          "major_registration_items": [],
+          "target_owner": ""
+        },
+        {
+          "rank": {
+            "value": "9",
+            "isCanceled": false
+          },
+          "registration_purpose": "5번근저당권설정등기말소",
+          "reception_information": "2018년10월31일 제199691호",
+          "major_registration_items": [],
+          "target_owner": ""
+        },
+        {
+          "rank": {
+            "value": "10",
+            "isCanceled": true
+          },
+          "registration_purpose": "근저당권설정",
+          "reception_information": "2018년11월12일 제206285호",
+          "major_registration_items": ["채권최고액 금66,000,000원", "근저당권자 오상윤"],
+          "target_owner": "차주룡"
+        },
+        {
+          "rank": {
+            "value": "10-1",
+            "isCanceled": true
+          },
+          "registration_purpose": "10번근저당권부질권",
+          "reception_information": "2018년12월13일 제227824호",
+          "major_registration_items": [
+            "채권최고액 금66,000,000원",
+            "채권자 주식회사강남캐피탈대부"
+          ],
+          "target_owner": "오상윤"
+        },
+        {
+          "rank": {
+            "value": "11",
+            "isCanceled": true
+          },
+          "registration_purpose": "근저당권설정",
+          "reception_information": "2019년11월27일 제183230호",
+          "major_registration_items": [
+            "채권최고액 금97,500,000원",
+            "근저당권자 주식회사와이펀드대부"
+          ],
+          "target_owner": "차주룡"
+        },
+        {
+          "rank": {
+            "value": "11-1",
+            "isCanceled": true
+          },
+          "registration_purpose": "11번근저당권부채권근질권설정",
+          "reception_information": "2019년11월27일 제183231호",
+          "major_registration_items": [
+            "채권최고액 금97,500,000원",
+            "채권자 아프로파이낸셜대부주식회사"
+          ],
+          "target_owner": "주식회사와이펀드대부"
+        },
+        {
+          "rank": {
+            "value": "12",
+            "isCanceled": false
+          },
+          "registration_purpose": "10-1번질권등기말소",
+          "reception_information": "2019년11월28일 제184899호",
+          "major_registration_items": [],
+          "target_owner": ""
+        },
+        {
+          "rank": {
+            "value": "13",
+            "isCanceled": false
+          },
+          "registration_purpose": "10번근저당권설정등기말소",
+          "reception_information": "2019년11월28일 제184900호",
+          "major_registration_items": [],
+          "target_owner": ""
+        },
+        {
+          "rank": {
+            "value": "14",
+            "isCanceled": false
+          },
+          "registration_purpose": "근저당권설정",
+          "reception_information": "2020년7월8일 제117993호",
+          "major_registration_items": [
+            "채권최고액 금120,000,000원",
+            "근저당권자 주식회사안양저축은행"
+          ],
+          "target_owner": "차주룡"
+        },
+        {
+          "rank": {
+            "value": "15",
+            "isCanceled": false
+          },
+          "registration_purpose": "11-1번근질권등기말소",
+          "reception_information": "2020년7월9일 제118457호",
+          "major_registration_items": [],
+          "target_owner": ""
+        },
+        {
+          "rank": {
+            "value": "16",
+            "isCanceled": false
+          },
+          "registration_purpose": "11번근저당권설정등기말소",
+          "reception_information": "2020년7월9일 제118458호",
+          "major_registration_items": [],
+          "target_owner": ""
+        },
+        {
+          "rank": {
+            "value": "17",
+            "isCanceled": false
+          },
+          "registration_purpose": "근저당권설정",
+          "reception_information": "2021년2월4일 제19409호",
+          "major_registration_items": [
+            "채권최고액 금60,000,000원",
+            "근저당권자 주식회사안양저축은행"
+          ],
+          "target_owner": "차주룡"
+        },
+        {
+          "rank": {
+            "value": "18",
+            "isCanceled": false
+          },
+          "registration_purpose": "근저당권설정",
+          "reception_information": "2021년12월30일 제249718호",
+          "major_registration_items": ["채권최고액 금8,500,000원", "근저당권자 오창열"],
+          "target_owner": "차주룡"
+        },
+        {
+          "rank": {
+            "value": "19",
+            "isCanceled": false
+          },
+          "registration_purpose": "근저당권설정",
+          "reception_information": "2022년2월4일 제16615호",
+          "major_registration_items": ["채권최고액 금15,000,000원", "근저당권자 오창열"],
+          "target_owner": "차주룡"
+        },
+        {
+          "rank": {
+            "value": "20",
+            "isCanceled": false
+          },
+          "registration_purpose": "주택임차권",
+          "reception_information": "2022년11월29일 제175358호",
+          "major_registration_items": ["임차보증금 금440,000,000원", "임차권자 최선녀"],
+          "target_owner": ""
+        }
+      ]
+    },
+    "market_info": {}
+  }
+}

@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/proxy/*"
+  to = "http://openapi.molit.go.kr/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}

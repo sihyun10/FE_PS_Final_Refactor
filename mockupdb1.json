@@ -1,0 +1,148 @@
+{
+  "pdfupload": {
+    "summary": {},
+    "pdf_summary": {
+      "ownership_list": [
+        {
+          "owner_name": "",
+          "resident_id": "",
+          "ownership_share": "",
+          "address": "",
+          "rank": ""
+        }
+      ],
+      "without_owner": [{}],
+      "rights_other_than_ownership": []
+    },
+    "gap_info": {
+      "recent_registration": [
+        {
+          "rank": "3",
+          "registration_purpose": "소유권이전",
+          "reception_inform": "2015년12월8일 제152704호",
+          "registration_cause": "2015년12월3일 매매",
+          "notes": {
+            "note": [
+              "소유자 박관재 860512-*******",
+              "인천광역시 연수구 해송로30번길 19,307동1702호(송도동,송도웰카운티3단지 아파트)",
+              "거래가액 금395,292,000원"
+            ],
+            "canceled": []
+          }
+        }
+      ],
+      "ownership_history": [
+        {
+          "rank": "1",
+          "registration_purpose": "소유권보존",
+          "reception_inform": "2010년4월22일 제34332호",
+          "registration_cause": "",
+          "notes": {
+            "note": ["소유자", "124771-0001551"],
+            "canceled": ["인천광역시도시개발공사", "인천광역시 남동구 만수동 1090"]
+          }
+        },
+        {
+          "rank": "1-1",
+          "registration_purpose": "1번등기명의인표시변경",
+          "reception_inform": "2015년12월8일 제152671호",
+          "registration_cause": "2011년12월28일 명칭변경",
+          "notes": {
+            "note": [
+              "인천광역시도시개발공사의 성명(명칭)",
+              "인천도시공사",
+              "인천도시공사의 주소",
+              "인천광역시 남동구 인주대로914번길 42(만수동)"
+            ],
+            "canceled": []
+          }
+        },
+        {
+          "rank": "2",
+          "registration_purpose": "소유권이전",
+          "reception_inform": "2015년12월8일 제152703호",
+          "registration_cause": "2015년11월17일 매매",
+          "notes": {
+            "note": [
+              "소유자 최치환 590715-*******",
+              "인천광역시 연수구 해송로30번길 19,307동1702호(송도동,송도웰카운티3단지 아파트)",
+              "거래가액 금386,292,000원"
+            ],
+            "canceled": []
+          }
+        },
+        {
+          "rank": "3",
+          "registration_purpose": "소유권이전",
+          "reception_inform": "2015년12월8일 제152704호",
+          "registration_cause": "2015년12월3일 매매",
+          "notes": {
+            "note": [
+              "소유자 박관재 860512-*******",
+              "인천광역시 연수구 해송로30번길 19,307동1702호(송도동,송도웰카운티3단지 아파트)",
+              "거래가액 금395,292,000원"
+            ],
+            "canceled": []
+          }
+        }
+      ]
+    },
+    "eul_info": {
+      "mortgage_info": [
+        {
+          "collateral_amount": "541,200,000원/3건",
+          "principal_amount_estimate": "492,000,000원 예상(1.1%)"
+        }
+      ],
+      "leasehold_info": [
+        {
+          "registration_purpose": "-",
+          "mortgage": "-",
+          "debtor_registration_number": "-"
+        }
+      ],
+      "mortgage_detail": [
+        {
+          "debtor_name": "박관재",
+          "debtor_address": "인천광역시 연수구 해송로30번길 19,307동1702호(송도동,송도웰카운티3단지 아파트)",
+          "registration_purpose": "근저당권설정",
+          "leasehold_name": ["농협은행주식회사"],
+          "debtor_registration_number": ["110111-4809385"]
+        }
+      ],
+      "rights_other_than_ownership": [
+        {
+          "rank": {
+            "value": "1",
+            "isCanceled": false
+          },
+          "registration_purpose": "근저당권설정",
+          "reception_information": "2015년12월8일 제152705호",
+          "major_registration_items": ["채권최고액 금403,200,000원", "근저당권자 농협은행주식회사"],
+          "target_owner": "박관재"
+        },
+        {
+          "rank": {
+            "value": "2",
+            "isCanceled": false
+          },
+          "registration_purpose": "근저당권설정",
+          "reception_information": "2016년3월14일 제34633호",
+          "major_registration_items": ["채권최고액 금54,000,000원", "근저당권자 농협은행주식회사"],
+          "target_owner": "박관재"
+        },
+        {
+          "rank": {
+            "value": "3",
+            "isCanceled": false
+          },
+          "registration_purpose": "근저당권설정",
+          "reception_information": "2020년4월8일 제168070호",
+          "major_registration_items": ["채권최고액 금84,000,000원", "근저당권자 농협은행주식회사"],
+          "target_owner": "박관재"
+        }
+      ]
+    },
+    "market_info": {}
+  }
+}

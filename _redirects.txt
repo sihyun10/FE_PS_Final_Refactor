@@ -1,0 +1,1 @@
+/proxy/* http://openapi.molit.go.kr/:splat 200! X-From=Netlify
