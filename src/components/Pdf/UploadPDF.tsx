@@ -5,7 +5,7 @@ import axios, { AxiosProgressEvent, CancelTokenSource } from 'axios';
 import { instance } from '../../api/UploadApi';
 import DragAndDrop from './DragAndDrop';
 import PDfLogo from '../../assets/Pdf/PdfLogo.svg';
-import { PrimaryButton, SpinnerButton, PrimaryModal, LoadingBar, CancleButton } from '../common';
+import { PrimaryButton, SpinnerButton, PrimaryModal, LoadingBar, CancelButton } from '../common';
 import UplodPDFStyles from './style/UploadPDFStyles';
 import { useDataStore } from '../../store/DataStore';
 import ApartData from '@/api/ApartDataApi';
@@ -365,7 +365,7 @@ const UplodPDF = () => {
               {!fileName || (
                 <>
                   <SpinnerButton isUploading={isUploading} filename={fileName} />
-                  <CancleButton onClick={handledDeletePDFfile} disabled={isUploading} />
+                  <CancelButton onClick={handledDeletePDFfile} disabled={isUploading} />
                 </>
               )}
             </FileSelectionWrapper>
