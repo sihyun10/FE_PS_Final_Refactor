@@ -158,4 +158,5 @@ const UploadPDFStyles = {
   FileSelectionWrapper,
   UploadButtonWrapper,
 };
+
 export default UploadPDFStyles;
