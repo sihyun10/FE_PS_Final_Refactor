@@ -20,7 +20,13 @@ const Home = () => {
           등기부등본 업로드 한번으로 간편한 대출 심사 프로세스를 경험해보세요.
         </Title>
       </HomeTitleContainer>
-      <CommonButton size={24} weight={700} width={306} height={80} onClick={() => navigate('pra')}>
+      <CommonButton
+        size={24}
+        weight={700}
+        width={306}
+        height={80}
+        onClick={() => navigate('upload')}
+      >
         심사 시작하기
       </CommonButton>
     </HomeLayout>

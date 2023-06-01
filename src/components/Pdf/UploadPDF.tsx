@@ -208,7 +208,7 @@ const UplodPDF = () => {
   };
   // 이동
   const ViewChange = () => {
-    navigate(`${dataStoreId}/pdfsummary`);
+    navigate(`/review/${dataStoreId}/pdfsummary`);
   };
 
   const ErrorModal = (PdfType: boolean, PdfSize: boolean) => {

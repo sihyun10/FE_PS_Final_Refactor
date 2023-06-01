@@ -30,11 +30,11 @@ const Layout = () => {
           </SummarySection>
           <MainSection>
             <TabMenus>
-              <NavLink to={`pra/${pdfId}/pdfsummary`}>등기부 요약</NavLink>
-              <NavLink to={`pra/${pdfId}/gap`}>등기부 갑구</NavLink>
-              <NavLink to={`pra/${pdfId}/eul`}>등기부 을구</NavLink>
-              <NavLink to={`pra/${pdfId}/marketprice`}>시세</NavLink>
-              <NavLink to={`pra/${pdfId}/location`}>입지</NavLink>
+              <NavLink to={`review/${pdfId}/pdfsummary`}>등기부 요약</NavLink>
+              <NavLink to={`review/${pdfId}/gap`}>등기부 갑구</NavLink>
+              <NavLink to={`review/${pdfId}/eul`}>등기부 을구</NavLink>
+              <NavLink to={`review/${pdfId}/marketprice`}>시세</NavLink>
+              <NavLink to={`review/${pdfId}/location`}>입지</NavLink>
             </TabMenus>
             <div className="praDetail">
               <Outlet />

@@ -12,12 +12,12 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route element={<Layout />}>
-        <Route path="pra" element={<Upload />} />
-        <Route path="pra/:id/pdfsummary" element={<PdfSummary />} />
-        <Route path="pra/:id/gap" element={<PdfGap />} />
-        <Route path="pra/:id/eul" element={<PdfEul />} />
-        <Route path="pra/:id/marketprice" element={<MarketPrice />} />
-        <Route path="pra/:id/location" element={<Location />} />
+        <Route path="upload" element={<Upload />} />
+        <Route path="review/:id/pdfsummary" element={<PdfSummary />} />
+        <Route path="review/:id/gap" element={<PdfGap />} />
+        <Route path="review/:id/eul" element={<PdfEul />} />
+        <Route path="review/:id/marketprice" element={<MarketPrice />} />
+        <Route path="review/:id/location" element={<Location />} />
         <Route path="/myreviews" element={<MyReviews />} />
       </Route>
       <Route path="*" element={<NotFound />} />

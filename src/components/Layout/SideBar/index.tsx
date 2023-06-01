@@ -13,11 +13,11 @@ const SideBar = () => {
         <img className="logo" src={logo} alt="logo" />
       </NavLink>
       <SidebarMenus>
-        <NavLink className={step !== 0 ? 'mainmenu active' : 'mainmenu'} to="pra">
+        <NavLink to="upload" className={step !== 0 ? 'mainmenu active' : 'mainmenu'}>
           심사하기
         </NavLink>
         <Submenus className={step !== 0 ? '' : 'hide'}>
-          <Link to="pra" className={step === 1 ? 'submenu active' : 'submenu'}>
+          <Link to="upload" className={step === 1 ? 'submenu active' : 'submenu'}>
             <span className="submenuIcon material-symbols-outlined">upload_file</span>
             등기부등본 업로드
             <MenuBadge className="dark">새로 심사하기</MenuBadge>
