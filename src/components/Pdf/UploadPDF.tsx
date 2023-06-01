@@ -5,7 +5,7 @@ import axios, { AxiosProgressEvent, CancelTokenSource } from 'axios';
 import { instance } from '../../api/UploadApi';
 import DragAndDrop from './DragAndDrop';
 import PDfLogo from '../../assets/Pdf/PdfLogo.svg';
-import { PrimaryButton, PrimaryModal } from '../common';
+import { CommonButton, CommonModal } from '../common';
 import SpinnerButton from './SpinnerButton';
 import LoadingBar from './LoadingBar';
 import CancelButton from './CancelButton';
@@ -233,7 +233,7 @@ const UplodPDF = () => {
 
   return (
     <UploadContainer>
-      <PrimaryModal
+      <CommonModal
         isOpen={isErorrModalOpen}
         onClose={() => {
           setErorrModalOpen(false);
@@ -244,7 +244,7 @@ const UplodPDF = () => {
         <ModalContents>
           <HeaderTitle>파일 오류 </HeaderTitle>
           <div style={{ color: 'red' }}>{modalMessage}</div>
-          <PrimaryButton
+          <CommonButton
             width={200}
             height={50}
             type="button"
@@ -253,11 +253,11 @@ const UplodPDF = () => {
             }}
           >
             확인
-          </PrimaryButton>
+          </CommonButton>
         </ModalContents>
-      </PrimaryModal>
+      </CommonModal>
 
-      <PrimaryModal
+      <CommonModal
         isOpen={UploadErorrModalOpen}
         onClose={() => {
           setUploadErorrModalOpen(false);
@@ -268,7 +268,7 @@ const UplodPDF = () => {
         <ModalContents>
           <HeaderTitle>업로드 오류 </HeaderTitle>
           <div style={{ color: 'red' }}>올바른 pdf파일이 아니거나 서버의 통신문제가 있습니다.</div>
-          <PrimaryButton
+          <CommonButton
             width={200}
             height={50}
             type="button"
@@ -277,11 +277,11 @@ const UplodPDF = () => {
             }}
           >
             확인
-          </PrimaryButton>
+          </CommonButton>
         </ModalContents>
-      </PrimaryModal>
+      </CommonModal>
 
-      <PrimaryModal
+      <CommonModal
         isOpen={isModalOpen}
         onClose={() => {
           handleCancelUpload();
@@ -331,7 +331,7 @@ const UplodPDF = () => {
             )}
           </div>
           {isUploading ? (
-            <PrimaryButton
+            <CommonButton
               color="gray"
               width={250}
               height={50}
@@ -339,14 +339,14 @@ const UplodPDF = () => {
               onClick={handleCancelUpload}
             >
               창닫기
-            </PrimaryButton>
+            </CommonButton>
           ) : (
-            <PrimaryButton width={400} height={50} type="button" onClick={ViewChange}>
+            <CommonButton width={400} height={50} type="button" onClick={ViewChange}>
               상세내역 페이지로 이동
-            </PrimaryButton>
+            </CommonButton>
           )}
         </ModalContents>
-      </PrimaryModal>
+      </CommonModal>
 
       <UploadHeader>
         <HeaderTitle>등기부등본 파일 첨부</HeaderTitle>
@@ -377,9 +377,9 @@ const UplodPDF = () => {
               <DropTitle>또는 여기로 파일을 끌어주세요.</DropTitle>
             ) : (
               <UploadButtonWrapper>
-                <PrimaryButton height={40} onClick={onFileUpload} disabled={isUploading}>
+                <CommonButton height={40} onClick={onFileUpload} disabled={isUploading}>
                   업로드
-                </PrimaryButton>
+                </CommonButton>
               </UploadButtonWrapper>
             )}
           </DropZone>

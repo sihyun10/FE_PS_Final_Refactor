@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 
-interface PrimaryButtonProps {
+interface CommonButtonProps {
   width?: number;
   height?: number;
   color?: string;
 }
 
-const PrimaryButton = styled.button<PrimaryButtonProps>`
+const CommonButton = styled.button<CommonButtonProps>`
   border: 0.3px solid #8e8e8e;
   border-radius: 4px;
   font-size: 16px;
@@ -22,4 +22,4 @@ const PrimaryButton = styled.button<PrimaryButtonProps>`
   }
 `;
 
-export default PrimaryButton;
+export default CommonButton;

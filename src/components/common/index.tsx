@@ -1,3 +1,3 @@
-export { default as PrimaryButton } from './PrimaryButton';
+export { default as CommonButton } from './CommonButton';
 
-export { default as PrimaryModal } from './PrimaryModal';
+export { default as CommonModal } from './CommonModal';

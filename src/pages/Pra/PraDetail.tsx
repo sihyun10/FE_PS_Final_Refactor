@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import PraPropertyInfo from '../../components/Pdf/PropertyInfo';
-import { PrimaryButton } from '@/components/common';
+import { CommonButton } from '@/components/common';
 
 const PraDetail = () => {
   return (
@@ -9,7 +9,7 @@ const PraDetail = () => {
       <PraDetailWrap>
         <FlexDiv>
           <TitleHeader>담보물건 요약</TitleHeader>
-          <PrimaryButton
+          <CommonButton
             onClick={() => {
               alert('클릭하셧습니다');
             }}
@@ -19,7 +19,7 @@ const PraDetail = () => {
             color="#CCAC55"
           >
             매물 요약 저장하기
-          </PrimaryButton>
+          </CommonButton>
         </FlexDiv>
         <PraPropertyInfo />
       </PraDetailWrap>
