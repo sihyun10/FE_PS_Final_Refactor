@@ -16,7 +16,7 @@ const PraDetail = () => {
             style={{ fontSize: '10px', border: 'none' }}
             width={100}
             height={24}
-            color="#CCAC55"
+            bgcolor="#CCAC55"
           >
             매물 요약 저장하기
           </CommonButton>
