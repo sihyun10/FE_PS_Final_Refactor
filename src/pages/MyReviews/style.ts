@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const PreparingPage = styled.div`
+export const MyReviewsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
