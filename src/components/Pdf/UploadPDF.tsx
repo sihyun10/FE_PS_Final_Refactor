@@ -332,7 +332,7 @@ const UplodPDF = () => {
           </div>
           {isUploading ? (
             <CommonButton
-              color="gray"
+              bgcolor="gray"
               width={250}
               height={50}
               type="button"
