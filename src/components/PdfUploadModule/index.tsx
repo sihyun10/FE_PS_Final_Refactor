@@ -13,7 +13,7 @@ import UplodPDFStyles from './style/UploadPDFStyles';
 import { useDataStore } from '../../store/DataStore';
 import ApartData from '@/api/ApartDataApi';
 
-const UplodPDF = () => {
+const PdfUploadModule = () => {
   const [PDFfile, setPDFfile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const [fileName, setFileName] = useState<string>('');
@@ -389,7 +389,7 @@ const UplodPDF = () => {
   );
 };
 
-export default UplodPDF;
+export default PdfUploadModule;
 
 const {
   UploadContainer,

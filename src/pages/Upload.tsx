@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
-import UploadPDF from '../components/Pdf/UploadPDF';
+import PdfUploadModule from '../components/PdfUploadModule';
 import nextIcon from '../assets/nextIcon.svg';
 // PRA는 Property Report Analysis의 약자로, 부동산 등기부등본 분석 및 평가를 의미하는 용어입니다.
 const Upload = () => {
@@ -13,7 +13,7 @@ const Upload = () => {
       </PageHeader>
 
       {/* 업로드기능 */}
-      <UploadPDF />
+      <PdfUploadModule />
       <HelpLinks>
         <HelpTitle>등기부등본이 없으신가요?</HelpTitle>
         <a href="https://www.iros.go.kr/pos1/jsp/help2/jsp/001001001002.jsp">
