@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Pra from './pages/Pra/PraUpload';
-import PraPrice from './pages/Pra/PraPrice';
 
 import MyReviews from './pages/MyReviews/index';
 import NotFound from './pages/NotFound/index';
@@ -19,8 +18,6 @@ const App = () => {
         <Route path="pra/:id/eul" element={<PdfEul />} />
         <Route path="pra/:id/marketprice" element={<MarketPrice />} />
         <Route path="pra/:id/location" element={<Location />} />
-
-        <Route path="/praprice" element={<PraPrice />} />
         <Route path="/myreviews" element={<MyReviews />} />
       </Route>
       <Route path="*" element={<NotFound />} />
