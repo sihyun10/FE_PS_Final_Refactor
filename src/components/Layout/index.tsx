@@ -4,7 +4,7 @@ import { useStepStore } from '@/store/store';
 import { LayoutContainer, SummarySection, MainSection, TabMenus } from './style';
 import SideBar from './SideBar';
 import Title from './Title';
-import PraDetail from '@/pages/Pra/PraDetail';
+import Overview from '@/pages/Pra/Overview';
 
 const Layout = () => {
   const { setStep } = useStepStore();
@@ -26,7 +26,7 @@ const Layout = () => {
       {pdfId ? (
         <>
           <SummarySection>
-            <PraDetail />
+            <Overview />
           </SummarySection>
           <MainSection>
             <TabMenus>

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import PropertyInfo from '../../components/Pdf/PropertyInfo';
 import { CommonButton } from '@/components/common';
 
-const PraDetail = () => {
+const Overview = () => {
   return (
     <PraContainer>
       <PraDetailWrap>
@@ -27,7 +27,7 @@ const PraDetail = () => {
   );
 };
 
-export default PraDetail;
+export default Overview;
 
 const PraContainer = styled.div`
   padding: 32px;
