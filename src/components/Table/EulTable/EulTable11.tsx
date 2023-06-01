@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, TableWrapper } from '../style';
+import styled from '@emotion/styled';
 import { useParams } from 'react-router-dom';
 import Table, { TableProps } from '@/components/common/Table';
 import MOCK_DATA1 from '@/../mockupdb1.json';
@@ -65,3 +65,29 @@ const Eultable11: React.FC<ExampleProps> = () => {
 };
 
 export default Eultable11;
+
+const Button = styled.button`
+  color: #0101df;
+`;
+
+const TableWrapper = styled.div`
+  tbody tr {
+    &:nth-of-type(1) {
+      background-color: #ffe4e4; /* 연한 빨간색 배경 */
+    }
+    td:nth-child(2) {
+      font-weight: bold;
+      background-color: #e4f1ff; /* 연한 파란색 배경 */
+    }
+  }
+  th {
+    &:nth-of-type(1) {
+      color: #ff0040; /* 담보총액/건수 텍스트 색상 */
+      font-weight: bold;
+    }
+    &:nth-of-type(2) {
+      color: #08088a; /* 원금 추론액 텍스트 색상 */
+      font-weight: bold;
+    }
+  }
+`;

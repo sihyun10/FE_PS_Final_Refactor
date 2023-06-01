@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { PraPriceContent, PraPriceTable } from '../style';
 import { useParams } from 'react-router-dom';
 import Table from '@/components/common/Table';
 import { useDataStore } from '@/store/DataStore';
@@ -75,12 +74,9 @@ const MarketConditionsTable2 = () => {
   };
 
   return (
-    <PraPriceContent>
-      <div>
-        <p className="tableTitle">2. 실거래가</p>
-      </div>
-      <PraPriceTable>{result.length > 0 ? <Table {...tableProps} /> : <div />}</PraPriceTable>
-    </PraPriceContent>
+    <div>
+      <Table {...tableProps} />
+    </div>
   );
 };
 
