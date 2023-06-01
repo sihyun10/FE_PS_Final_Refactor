@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import PraPropertyInfo from '../../components/Pdf/PropertyInfo';
+import PropertyInfo from '../../components/Pdf/PropertyInfo';
 import { CommonButton } from '@/components/common';
 
 const PraDetail = () => {
@@ -21,7 +21,7 @@ const PraDetail = () => {
             매물 요약 저장하기
           </CommonButton>
         </FlexDiv>
-        <PraPropertyInfo />
+        <PropertyInfo />
       </PraDetailWrap>
     </PraContainer>
   );
