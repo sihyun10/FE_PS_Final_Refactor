@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { PreparingPage, SubscribeFormContainer } from './style';
+import { MyReviewsContainer, SubscribeFormContainer } from './style';
 import axios from 'axios';
 import { CommonModal } from '@/components/common';
 
@@ -41,7 +41,7 @@ const MyReviews = () => {
   };
 
   return (
-    <PreparingPage>
+    <MyReviewsContainer>
       <CommonModal
         isOpen={opened}
         onClose={() => {
@@ -70,7 +70,7 @@ const MyReviews = () => {
           <button type="submit">등록</button>
         </form>
       </SubscribeFormContainer>
-    </PreparingPage>
+    </MyReviewsContainer>
   );
 };
 
