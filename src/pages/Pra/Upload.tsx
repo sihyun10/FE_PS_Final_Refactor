@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import UploadPDF from '../../components/Pdf/UploadPDF';
 import nextIcon from '../../assets/Pdf/nextIcon.svg';
 // PRA는 Property Report Analysis의 약자로, 부동산 등기부등본 분석 및 평가를 의미하는 용어입니다.
-const PraUpload = () => {
+const Upload = () => {
   return (
     <Container>
       <PageHeader>
@@ -29,7 +29,7 @@ const PraUpload = () => {
   );
 };
 
-export default PraUpload;
+export default Upload;
 
 const NextIcon = styled.img`
   width: auto;

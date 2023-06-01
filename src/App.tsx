@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import PraUpload from './pages/Pra/PraUpload';
+import Upload from './pages/Pra/Upload';
 
 import MyReviews from './pages/MyReviews/index';
 import NotFound from './pages/NotFound/index';
@@ -12,7 +12,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route element={<Layout />}>
-        <Route path="pra" element={<PraUpload />} />
+        <Route path="pra" element={<Upload />} />
         <Route path="pra/:id/pdfsummary" element={<PdfSummary />} />
         <Route path="pra/:id/gap" element={<PdfGap />} />
         <Route path="pra/:id/eul" element={<PdfEul />} />
