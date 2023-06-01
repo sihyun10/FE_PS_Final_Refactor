@@ -4,7 +4,7 @@ import { useStepStore } from '@/store/store';
 import { LayoutContainer, SummarySection, MainSection, TabMenus } from './style';
 import SideBar from './SideBar';
 import Title from './Title';
-import Overview from '@/pages/Pra/Overview';
+import Overview from '@/components/Overview';
 
 const Layout = () => {
   const { setStep } = useStepStore();

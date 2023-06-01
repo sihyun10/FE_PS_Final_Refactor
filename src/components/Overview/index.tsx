@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import PropertyInfo from '../../components/Pdf/PropertyInfo';
+import PropertyInfo from './PropertyInfo';
 import { CommonButton } from '@/components/common';
 
 const Overview = () => {
