@@ -5,7 +5,21 @@ import Table, { TableProps } from '@/components/common/Table';
 import MOCK_DATA1 from '@/../mockupdb1.json';
 import MOCK_DATA2 from '@/../mockupdb2.json';
 import MOCK_DATA3 from '@/../mockupdb3.json';
-import { COLUMNS } from '@/components/Table/EulTable/columns';
+import { Column } from 'react-table';
+
+const COLUMNS: Column<{
+  collateral_amount: string;
+  principal_amount_estimate: string;
+}>[] = [
+  {
+    Header: '담보총액/건수',
+    accessor: 'collateral_amount',
+  },
+  {
+    Header: '원금 추론액',
+    accessor: 'principal_amount_estimate',
+  },
+];
 
 type ExampleProps = {};
 

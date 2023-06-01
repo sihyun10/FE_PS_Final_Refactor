@@ -4,7 +4,45 @@ import Table, { TableProps } from '@/components/common/Table';
 import MOCK_DATA1 from '@/../mockupdb1.json';
 import MOCK_DATA2 from '@/../mockupdb2.json';
 import MOCK_DATA3 from '@/../mockupdb3.json';
-import { COLUMNS } from '@/components/Table/GapTable/columns';
+import { Column } from 'react-table';
+
+const COLUMNS: Column<{
+  rank: string;
+  registration_purpose: string;
+  reception_inform: string;
+  registration_cause: string;
+  notes: {
+    note: string[];
+    canceled: string[];
+  };
+}>[] = [
+  {
+    Header: '순위번호',
+    accessor: 'rank',
+  },
+  {
+    Header: '등기목적',
+    accessor: 'registration_purpose',
+  },
+  {
+    Header: '접수',
+    accessor: 'reception_inform',
+    Cell: ({ value }: { value: string }) => (
+      <div style={{ whiteSpace: 'pre-wrap' }}>{value.replace(' ', '\n')}</div>
+    ),
+  },
+  {
+    Header: '등기 원인',
+    accessor: 'registration_cause',
+  },
+  {
+    Header: '관리자 및 기타 사항',
+    accessor: 'notes',
+    Cell: ({ value }: { value: { note: string[] } }) => (
+      <div style={{ whiteSpace: 'pre-wrap', textAlign: 'left' }}>{value.note.join('\n')}</div>
+    ),
+  },
+];
 
 type ExampleProps = {};
 
