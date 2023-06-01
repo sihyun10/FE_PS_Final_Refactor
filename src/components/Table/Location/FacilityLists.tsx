@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FacilityListsWrapper, FacilityListsTable } from './style';
+import styled from '@emotion/styled';
 
 interface positionProps {
   newLat: number;
@@ -202,3 +202,34 @@ const FacilityLists = ({ newLat, newLng }: positionProps) => {
 };
 
 export default FacilityLists;
+
+const FacilityListsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+const FacilityListsTable = styled.table`
+  width: 464px;
+  border-top: 1px solid #bdbdbd;
+  border-bottom: 1px solid #bdbdbd;
+  font-size: 12px;
+  th,
+  td {
+    text-align: center;
+    padding: 10px 0;
+  }
+  td:first-of-type,
+  td:last-of-type {
+    width: 102px;
+  }
+  thead {
+    background-color: #eee;
+    border-bottom: 1px solid #bdbdbd;
+  }
+  tbody {
+    tr:nth-of-type(even) {
+      background-color: #f3f4fa;
+    }
+  }
+`;

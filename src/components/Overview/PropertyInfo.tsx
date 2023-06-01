@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Link, useParams } from 'react-router-dom';
 import { gray } from 'd3';
 import { useDataStore } from '../../store/DataStore';
-import { PrimaryButton } from '../common';
+import { CommonButton } from '../common';
 
 const PropertyInfo = () => {
   const { id } = useParams();

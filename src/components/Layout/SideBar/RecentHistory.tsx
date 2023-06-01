@@ -14,7 +14,7 @@ const RecentHistoryItem = ({ idNum, fileName }: { idNum: number; fileName: strin
   };
   return (
     <NavLink
-      to={`pra/${idNum}/pdfsummary`}
+      to={`review/${idNum}/pdfsummary`}
       className="recentHistoryItem"
       onClick={() => {
         setStep(2);

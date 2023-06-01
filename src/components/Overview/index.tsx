@@ -1,33 +1,33 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import PraPropertyInfo from '../../components/Pdf/PropertyInfo';
-import { PrimaryButton } from '@/components/common';
+import PropertyInfo from './PropertyInfo';
+import { CommonButton } from '@/components/common';
 
-const PraDetail = () => {
+const Overview = () => {
   return (
     <PraContainer>
       <PraDetailWrap>
         <FlexDiv>
           <TitleHeader>담보물건 요약</TitleHeader>
-          <PrimaryButton
+          <CommonButton
             onClick={() => {
               alert('클릭하셧습니다');
             }}
             style={{ fontSize: '10px', border: 'none' }}
             width={100}
             height={24}
-            color="#CCAC55"
+            bgcolor="#CCAC55"
           >
             매물 요약 저장하기
-          </PrimaryButton>
+          </CommonButton>
         </FlexDiv>
-        <PraPropertyInfo />
+        <PropertyInfo />
       </PraDetailWrap>
     </PraContainer>
   );
 };
 
-export default PraDetail;
+export default Overview;
 
 const PraContainer = styled.div`
   padding: 32px;

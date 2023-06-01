@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDataStore } from '@/store/DataStore';
 import Map from '@/components/Map';
-import EstateAgentLists from '@/components/Map/EstateAgentLists';
-import FacilityLists from '@/components/Map/FacilityLists';
+import FacilityTable from '@/components/Table/Location/FacilityLists';
+import EstateAgentTable from '@/components/Table/Location/EstateAgentLists';
 
 const Location = () => {
   const { id } = useParams();
@@ -48,9 +48,9 @@ const Location = () => {
       <p>
         2. 주변 시설<span>(담보물건 1km 이내에서 가장 가까운 장소를 표시합니다.)</span>
       </p>
-      <FacilityLists newLat={newLat} newLng={newLng} />
+      <FacilityTable newLat={newLat} newLng={newLng} />
       <p>3. 주변 부동산 정보</p>
-      <EstateAgentLists newLat={newLat} newLng={newLng} />
+      <EstateAgentTable newLat={newLat} newLng={newLng} />
       <a href={link} target="_blank" rel="noreferrer">
         네이버 부동산에서 더보기<span className="material-symbols-outlined">arrow_forward_ios</span>
       </a>

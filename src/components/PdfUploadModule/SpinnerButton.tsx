@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
-import checkmark from '../../assets/Pdf/checkmark.svg';
+import checkmark from '../../assets/checkmark.svg';
 
 interface Props {
   isUploading: boolean;

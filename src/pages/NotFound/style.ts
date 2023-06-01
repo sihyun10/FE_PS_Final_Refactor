@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const NFContainer = styled.div`
+export const NotFoundContainer = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;

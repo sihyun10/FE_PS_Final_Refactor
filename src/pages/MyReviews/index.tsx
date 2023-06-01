@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { PreparingPage, SubscribeFormContainer } from './style';
+import { MyReviewsContainer, SubscribeFormContainer } from './style';
 import axios from 'axios';
-import { PrimaryModal } from '@/components/common';
+import { CommonModal } from '@/components/common';
 
 const MyReviews = () => {
   const [mail, setMail] = useState<string>('');
@@ -41,8 +41,8 @@ const MyReviews = () => {
   };
 
   return (
-    <PreparingPage>
-      <PrimaryModal
+    <MyReviewsContainer>
+      <CommonModal
         isOpen={opened}
         onClose={() => {
           setOpened(false);
@@ -51,7 +51,7 @@ const MyReviews = () => {
         height={120}
       >
         {message}
-      </PrimaryModal>
+      </CommonModal>
       <p className="mainTitle">
         내 심사관리 서비스가
         <br />곧 출시됩니다.
@@ -70,7 +70,7 @@ const MyReviews = () => {
           <button type="submit">등록</button>
         </form>
       </SubscribeFormContainer>
-    </PreparingPage>
+    </MyReviewsContainer>
   );
 };
 

@@ -1,13 +1,13 @@
 import { Column } from 'react-table';
 import { useState, useEffect } from 'react';
-import Table, { TableProps } from '../common/Table';
+import Table, { TableProps } from '@/components/common/Table';
 
 interface positionProps {
   newLat: number;
   newLng: number;
 }
 
-const EstateAgentLists = ({ newLat, newLng }: positionProps) => {
+const EstateAgentTable = ({ newLat, newLng }: positionProps) => {
   const [agentLists, setAgentLists] = useState<any>();
 
   useEffect(() => {
@@ -67,4 +67,4 @@ const EstateAgentLists = ({ newLat, newLng }: positionProps) => {
   return <div>{agentLists ? <Table {...tableProps} /> : null}</div>;
 };
 
-export default EstateAgentLists;
+export default EstateAgentTable;

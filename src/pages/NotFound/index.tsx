@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom';
-import { NFContainer } from './style';
+import { NotFoundContainer } from './style';
 import notFoundIcon from '@/assets/NotFount_icon.png';
 import logo from '@/assets/logo.png';
 
 const NotFound = () => {
   const navigate = useNavigate();
   return (
-    <NFContainer>
+    <NotFoundContainer>
       <img className="logo" src={logo} alt="logo" />
       <img className="alertIcon" src={notFoundIcon} alt="alert_icon" />
       <p className="mainTitle">
@@ -27,7 +27,7 @@ const NotFound = () => {
           홈으로 돌아가기<span className="material-symbols-outlined arrow">chevron_right</span>
         </button>
       </div>
-    </NFContainer>
+    </NotFoundContainer>
   );
 };
 

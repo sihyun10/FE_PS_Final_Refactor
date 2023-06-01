@@ -1,8 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import Pra from './pages/Pra/PraUpload';
-import PraPrice from './pages/Pra/PraPrice';
+import Upload from './pages/Upload';
 
 import MyReviews from './pages/MyReviews/index';
 import NotFound from './pages/NotFound/index';
@@ -13,14 +12,12 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route element={<Layout />}>
-        <Route path="pra" element={<Pra />} />
-        <Route path="pra/:id/pdfsummary" element={<PdfSummary />} />
-        <Route path="pra/:id/gap" element={<PdfGap />} />
-        <Route path="pra/:id/eul" element={<PdfEul />} />
-        <Route path="pra/:id/marketprice" element={<MarketPrice />} />
-        <Route path="pra/:id/location" element={<Location />} />
-
-        <Route path="/praprice" element={<PraPrice />} />
+        <Route path="upload" element={<Upload />} />
+        <Route path="review/:id/pdfsummary" element={<PdfSummary />} />
+        <Route path="review/:id/gap" element={<PdfGap />} />
+        <Route path="review/:id/eul" element={<PdfEul />} />
+        <Route path="review/:id/marketprice" element={<MarketPrice />} />
+        <Route path="review/:id/location" element={<Location />} />
         <Route path="/myreviews" element={<MyReviews />} />
       </Route>
       <Route path="*" element={<NotFound />} />

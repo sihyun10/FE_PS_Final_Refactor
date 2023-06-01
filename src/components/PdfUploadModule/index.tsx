@@ -4,13 +4,16 @@ import { useNavigate } from 'react-router-dom';
 import axios, { AxiosProgressEvent, CancelTokenSource } from 'axios';
 import { instance } from '../../api/UploadApi';
 import DragAndDrop from './DragAndDrop';
-import PDfLogo from '../../assets/Pdf/PdfLogo.svg';
-import { PrimaryButton, SpinnerButton, PrimaryModal, LoadingBar, CancleButton } from '../common';
-import UplodPDFStyles from './style/UploadPDFStyles';
+import PDfLogo from '../../assets/PdfLogo.svg';
+import { CommonButton, CommonModal } from '../common';
+import SpinnerButton from './SpinnerButton';
+import LoadingBar from './LoadingBar';
+import CancelButton from './CancelButton';
+import UplodPDFStyles from './style';
 import { useDataStore } from '../../store/DataStore';
 import ApartData from '@/api/ApartDataApi';
 
-const UplodPDF = () => {
+const PdfUploadModule = () => {
   const [PDFfile, setPDFfile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const [fileName, setFileName] = useState<string>('');
@@ -205,7 +208,7 @@ const UplodPDF = () => {
   };
   // 이동
   const ViewChange = () => {
-    navigate(`${dataStoreId}/pdfsummary`);
+    navigate(`/review/${dataStoreId}/pdfsummary`);
   };
 
   const ErrorModal = (PdfType: boolean, PdfSize: boolean) => {
@@ -230,7 +233,7 @@ const UplodPDF = () => {
 
   return (
     <UploadContainer>
-      <PrimaryModal
+      <CommonModal
         isOpen={isErorrModalOpen}
         onClose={() => {
           setErorrModalOpen(false);
@@ -241,7 +244,7 @@ const UplodPDF = () => {
         <ModalContents>
           <HeaderTitle>파일 오류 </HeaderTitle>
           <div style={{ color: 'red' }}>{modalMessage}</div>
-          <PrimaryButton
+          <CommonButton
             width={200}
             height={50}
             type="button"
@@ -250,11 +253,11 @@ const UplodPDF = () => {
             }}
           >
             확인
-          </PrimaryButton>
+          </CommonButton>
         </ModalContents>
-      </PrimaryModal>
+      </CommonModal>
 
-      <PrimaryModal
+      <CommonModal
         isOpen={UploadErorrModalOpen}
         onClose={() => {
           setUploadErorrModalOpen(false);
@@ -265,7 +268,7 @@ const UplodPDF = () => {
         <ModalContents>
           <HeaderTitle>업로드 오류 </HeaderTitle>
           <div style={{ color: 'red' }}>올바른 pdf파일이 아니거나 서버의 통신문제가 있습니다.</div>
-          <PrimaryButton
+          <CommonButton
             width={200}
             height={50}
             type="button"
@@ -274,11 +277,11 @@ const UplodPDF = () => {
             }}
           >
             확인
-          </PrimaryButton>
+          </CommonButton>
         </ModalContents>
-      </PrimaryModal>
+      </CommonModal>
 
-      <PrimaryModal
+      <CommonModal
         isOpen={isModalOpen}
         onClose={() => {
           handleCancelUpload();
@@ -328,22 +331,22 @@ const UplodPDF = () => {
             )}
           </div>
           {isUploading ? (
-            <PrimaryButton
-              color="gray"
+            <CommonButton
+              bgcolor="gray"
               width={250}
               height={50}
               type="button"
               onClick={handleCancelUpload}
             >
               창닫기
-            </PrimaryButton>
+            </CommonButton>
           ) : (
-            <PrimaryButton width={400} height={50} type="button" onClick={ViewChange}>
+            <CommonButton width={400} height={50} type="button" onClick={ViewChange}>
               상세내역 페이지로 이동
-            </PrimaryButton>
+            </CommonButton>
           )}
         </ModalContents>
-      </PrimaryModal>
+      </CommonModal>
 
       <UploadHeader>
         <HeaderTitle>등기부등본 파일 첨부</HeaderTitle>
@@ -365,7 +368,7 @@ const UplodPDF = () => {
               {!fileName || (
                 <>
                   <SpinnerButton isUploading={isUploading} filename={fileName} />
-                  <CancleButton onClick={handledDeletePDFfile} disabled={isUploading} />
+                  <CancelButton onClick={handledDeletePDFfile} disabled={isUploading} />
                 </>
               )}
             </FileSelectionWrapper>
@@ -374,9 +377,9 @@ const UplodPDF = () => {
               <DropTitle>또는 여기로 파일을 끌어주세요.</DropTitle>
             ) : (
               <UploadButtonWrapper>
-                <PrimaryButton height={40} onClick={onFileUpload} disabled={isUploading}>
+                <CommonButton height={40} onClick={onFileUpload} disabled={isUploading}>
                   업로드
-                </PrimaryButton>
+                </CommonButton>
               </UploadButtonWrapper>
             )}
           </DropZone>
@@ -386,7 +389,7 @@ const UplodPDF = () => {
   );
 };
 
-export default UplodPDF;
+export default PdfUploadModule;
 
 const {
   UploadContainer,

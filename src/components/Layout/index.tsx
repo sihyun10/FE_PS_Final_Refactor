@@ -4,7 +4,7 @@ import { useStepStore } from '@/store/store';
 import { LayoutContainer, SummarySection, MainSection, TabMenus } from './style';
 import SideBar from './SideBar';
 import Title from './Title';
-import PraDetail from '@/pages/Pra/PraDetail';
+import Overview from '@/components/Overview';
 
 const Layout = () => {
   const { setStep } = useStepStore();
@@ -12,10 +12,19 @@ const Layout = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname.includes('pra')) {
-      setStep(pdfId ? 2 : 1);
-    } else {
-      setStep(0);
+    switch (true) {
+      case location.pathname.includes('myreviews'):
+        setStep(0);
+        break;
+      case location.pathname.includes('upload'):
+        setStep(1);
+        break;
+      case location.pathname.includes('review'):
+        setStep(2);
+        break;
+      default:
+        setStep(0);
+        break;
     }
   }, [location]);
 
@@ -26,15 +35,15 @@ const Layout = () => {
       {pdfId ? (
         <>
           <SummarySection>
-            <PraDetail />
+            <Overview />
           </SummarySection>
           <MainSection>
             <TabMenus>
-              <NavLink to={`pra/${pdfId}/pdfsummary`}>등기부 요약</NavLink>
-              <NavLink to={`pra/${pdfId}/gap`}>등기부 갑구</NavLink>
-              <NavLink to={`pra/${pdfId}/eul`}>등기부 을구</NavLink>
-              <NavLink to={`pra/${pdfId}/marketprice`}>시세</NavLink>
-              <NavLink to={`pra/${pdfId}/location`}>입지</NavLink>
+              <NavLink to={`review/${pdfId}/pdfsummary`}>등기부 요약</NavLink>
+              <NavLink to={`review/${pdfId}/gap`}>등기부 갑구</NavLink>
+              <NavLink to={`review/${pdfId}/eul`}>등기부 을구</NavLink>
+              <NavLink to={`review/${pdfId}/marketprice`}>시세</NavLink>
+              <NavLink to={`review/${pdfId}/location`}>입지</NavLink>
             </TabMenus>
             <div className="praDetail">
               <Outlet />

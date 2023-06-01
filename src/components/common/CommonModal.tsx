@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-interface PrimaryModalProps {
+interface CommonModalProps {
   children?: React.ReactNode;
   isOpen: boolean;
   onClose: () => void;
@@ -11,14 +11,14 @@ interface PrimaryModalProps {
   lockBackground?: boolean;
 }
 
-const PrimaryModal = ({
+const CommonModal = ({
   children = null,
   isOpen,
   onClose,
   width = 700,
   height = 470,
   lockBackground = false,
-}: PrimaryModalProps) => {
+}: CommonModalProps) => {
   if (!isOpen) return null;
 
   return (
@@ -68,4 +68,4 @@ const ModalContent = styled.div<{ width: number; height: number }>`
   padding: 20px;
 `;
 
-export default PrimaryModal;
+export default CommonModal;
