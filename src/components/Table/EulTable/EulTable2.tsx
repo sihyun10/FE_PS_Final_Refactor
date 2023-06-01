@@ -4,7 +4,39 @@ import Table, { TableProps } from '@/components/common/Table';
 import MOCK_DATA1 from '@/../mockupdb1.json';
 import MOCK_DATA2 from '@/../mockupdb2.json';
 import MOCK_DATA3 from '@/../mockupdb3.json';
-import { COLUMNS } from '@/components/Table/EulTable/columns3';
+import { Column } from 'react-table';
+
+const COLUMNS: Column<{
+  rank: any;
+  registration_purpose: string;
+  reception_information: string;
+  major_registration_items: string[];
+  target_owner: string;
+}>[] = [
+  {
+    Header: '순위',
+    accessor: (data) => data.rank.value,
+  },
+  {
+    Header: '등기목적',
+    accessor: 'registration_purpose',
+  },
+  {
+    Header: '접수 정보',
+    accessor: 'reception_information',
+  },
+  {
+    Header: '주요등기사항',
+    accessor: 'major_registration_items',
+    Cell: ({ value }: { value: string[] }) => (
+      <div style={{ whiteSpace: 'pre-wrap' }}>{value.join('\n')}</div>
+    ),
+  },
+  {
+    Header: '대상소유자',
+    accessor: 'target_owner',
+  },
+];
 
 type ExampleProps = {};
 

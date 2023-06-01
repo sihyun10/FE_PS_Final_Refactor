@@ -4,8 +4,8 @@ import Home from './pages/Home';
 import Pra from './pages/Pra/PraUpload';
 import PraPrice from './pages/Pra/PraPrice';
 
-import MyReviews from './pages/MyReviews';
-import NotFound from './pages/NotFound';
+import MyReviews from './pages/MyReviews/index';
+import NotFound from './pages/NotFound/index';
 import { PdfSummary, PdfGap, PdfEul, MarketPrice, Location } from './pages/Detailed';
 
 const App = () => {

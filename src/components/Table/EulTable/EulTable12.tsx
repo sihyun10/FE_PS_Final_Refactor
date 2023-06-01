@@ -4,7 +4,26 @@ import Table, { TableProps } from '@/components/common/Table';
 import MOCK_DATA1 from '@/../mockupdb1.json';
 import MOCK_DATA2 from '@/../mockupdb2.json';
 import MOCK_DATA3 from '@/../mockupdb3.json';
-import { COLUMNS } from '@/components/Table/EulTable/columns1';
+import { Column } from 'react-table';
+
+const COLUMNS: Column<{
+  registration_purpose: string;
+  mortgage: string;
+  debtor_registration_number: string;
+}>[] = [
+  {
+    Header: '등기 목적',
+    accessor: 'registration_purpose',
+  },
+  {
+    Header: '전세권자',
+    accessor: 'mortgage',
+  },
+  {
+    Header: '주민/사업자등록번호',
+    accessor: 'debtor_registration_number',
+  },
+];
 
 type ExampleProps = {};
 

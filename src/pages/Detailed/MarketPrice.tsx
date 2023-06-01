@@ -1,17 +1,31 @@
-import { useParams } from 'react-router-dom';
 import styled from '@emotion/styled';
 import PraPrice from '../Pra/PraPrice';
+import MarketPriceTable2 from '@/components/Table/MarketPrice/MarketPriceTable2';
 
 const MarketPrice = () => {
-  const { id } = useParams<{ id: string }>(); // 실제 id 값을 추출하여 할당
   return (
-    <MarketPriceWrap>
+    <div>
       <PraPrice />
-    </MarketPriceWrap>
+      <PraPriceContent>
+        <div>
+          <p className="tableTitle">2. 실거래가</p>
+          <MarketPriceTable2 />
+        </div>
+      </PraPriceContent>
+    </div>
   );
 };
 
 export default MarketPrice;
-const MarketPriceWrap = styled.div`
-  width: 940px;
+
+const PraPriceContent = styled.div`
+  width: 100%;
+  .tableTitle {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  div {
+    height: 510px;
+    margin-top: 25px;
+  }
 `;
