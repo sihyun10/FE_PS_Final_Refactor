@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import React, { useEffect, useState } from 'react';
+import { PraPriceContent, PraPriceTable } from '../style';
 import { useParams } from 'react-router-dom';
 import Table from '@/components/common/Table';
 import { useDataStore } from '@/store/DataStore';
@@ -85,16 +85,3 @@ const MarketConditionsTable2 = () => {
 };
 
 export default MarketConditionsTable2;
-
-const PraPriceContent = styled.div`
-  width: 100%;
-  .tableTitle {
-    font-size: 14px;
-    font-weight: bold;
-  }
-`;
-
-const PraPriceTable = styled.div`
-  height: 510px;
-  margin-top: 25px;
-`;
