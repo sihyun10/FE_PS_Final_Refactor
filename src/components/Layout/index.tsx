@@ -12,10 +12,19 @@ const Layout = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname.includes('pra')) {
-      setStep(pdfId ? 2 : 1);
-    } else {
-      setStep(0);
+    switch (true) {
+      case location.pathname.includes('myreviews'):
+        setStep(0);
+        break;
+      case location.pathname.includes('upload'):
+        setStep(1);
+        break;
+      case location.pathname.includes('review'):
+        setStep(2);
+        break;
+      default:
+        setStep(0);
+        break;
     }
   }, [location]);
 

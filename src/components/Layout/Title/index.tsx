@@ -9,10 +9,16 @@ const Title = () => {
   const [title, setTitle] = useState<string>('');
 
   useEffect(() => {
-    if (location.pathname.includes('pra')) {
-      setTitle('심사하기');
-    } else if (location.pathname.includes('myreviews')) {
-      setTitle('내 심사관리');
+    switch (true) {
+      case location.pathname.includes('myreviews'):
+        setTitle('내 심사관리');
+        break;
+      case location.pathname.includes('upload') || location.pathname.includes('review'):
+        setTitle('심사하기');
+        break;
+      default:
+        setTitle('');
+        break;
     }
   }, [location]);
 
