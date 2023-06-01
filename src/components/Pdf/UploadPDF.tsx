@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios, { AxiosProgressEvent, CancelTokenSource } from 'axios';
 import { instance } from '../../api/UploadApi';
 import DragAndDrop from './DragAndDrop';
-import PDfLogo from '../../assets/Pdf/PdfLogo.svg';
+import PDfLogo from '../../assets/PdfLogo.svg';
 import { CommonButton, CommonModal } from '../common';
 import SpinnerButton from './SpinnerButton';
 import LoadingBar from './LoadingBar';
