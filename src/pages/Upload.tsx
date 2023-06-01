@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
-import UploadPDF from '../../components/Pdf/UploadPDF';
-import nextIcon from '../../assets/Pdf/nextIcon.svg';
+import UploadPDF from '../components/Pdf/UploadPDF';
+import nextIcon from '../assets/Pdf/nextIcon.svg';
 // PRA는 Property Report Analysis의 약자로, 부동산 등기부등본 분석 및 평가를 의미하는 용어입니다.
 const Upload = () => {
   return (
