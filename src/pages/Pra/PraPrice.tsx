@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Chart from '@/components/Chart/';
-import Table from '@/components/common/Table';
 import { useDataStore } from '@/store/DataStore';
 
 const PraPrice = () => {
@@ -14,6 +13,7 @@ const PraPrice = () => {
   let maxPrice = '';
   let allMinPrice = '';
   let allMaxPrice = '';
+
   useEffect(() => {
     if (!id) {
       console.log('URL에 아이디가 제공되지 않았습니다.');
@@ -33,7 +33,7 @@ const PraPrice = () => {
   const result = praPriceData
     ? Object.entries(praPriceData)
         .flatMap(([date, records]) => {
-          return (records as any[]).map((record, index) => ({
+          return (records as any[]).map((record) => ({
             계약일: date + String(record.일).padStart(2, '0'),
             아파트명: `${record.아파트}  ${Math.floor(record.전용면적 / 3.3)}평`,
             거래: '매매',
@@ -74,39 +74,6 @@ const PraPrice = () => {
     allMaxPrice = formatPrice(findMaxPrice(result));
   }
 
-  const ColumnsPrice = [
-    {
-      Header: '계약일',
-      accessor: '계약일',
-    },
-    {
-      Header: '아파트명',
-      accessor: '아파트명',
-    },
-    {
-      Header: '거래',
-      accessor: '거래',
-    },
-    {
-      Header: '거래금액',
-      accessor: '거래금액',
-    },
-    {
-      Header: '전용면적',
-      accessor: '전용면적',
-    },
-    {
-      Header: '층',
-      accessor: '층',
-    },
-  ];
-  const tableProps = {
-    tableData: result,
-    tableColumns: ColumnsPrice,
-    maxHeight: '500px',
-    width: ['150px', '250px', '100px', '230px', '100px', '110px'],
-  };
-
   return (
     <PraPriceWrap>
       <PraPriceContent>
@@ -141,23 +108,17 @@ const PraPrice = () => {
               <PraPriceHighLow>
                 <PraPriceTitle>최고 실거래가</PraPriceTitle>
                 <PraValue style={{ color: '#7D6117' }}>{allMaxPrice}</PraValue>
-                <PraAnnotation>전체 데이타 기준</PraAnnotation>
+                <PraAnnotation>전체 데이터 기준</PraAnnotation>
               </PraPriceHighLow>
 
               <PraPriceHighLow>
                 <PraPriceTitle>최저 실거래가</PraPriceTitle>
                 <PraValue style={{ color: '#7D6117' }}>{allMinPrice}</PraValue>
-                <PraAnnotation>전체 데이타 기준</PraAnnotation>
+                <PraAnnotation>전체 데이터 기준</PraAnnotation>
               </PraPriceHighLow>
             </PraPriceFlexDiv>
           </PraPriceFlexColumnDiv>
         </PraPriceFlexDiv>
-      </PraPriceContent>
-      <PraPriceContent style={{ width: '100%' }}>
-        <PraPriceFlexDiv>
-          <PraPriceTitle>2. 실거래가</PraPriceTitle>
-        </PraPriceFlexDiv>
-        <PraPriceTable>{result.length > 0 ? <Table {...tableProps} /> : <div />}</PraPriceTable>
       </PraPriceContent>
     </PraPriceWrap>
   );
@@ -237,10 +198,6 @@ const PraPriceFlexColumnDiv = styled.div`
 const PraPriceFlexDiv = styled.div`
   width: 100%;
   display: flex;
-`;
-const PraPriceTable = styled.div`
-  height: 510px;
-  margin-top: 25px;
 `;
 
 const PraPriceTitle = styled.span`
