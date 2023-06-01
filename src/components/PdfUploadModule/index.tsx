@@ -9,7 +9,7 @@ import { CommonButton, CommonModal } from '../common';
 import SpinnerButton from './SpinnerButton';
 import LoadingBar from './LoadingBar';
 import CancelButton from './CancelButton';
-import UplodPDFStyles from './style/UploadPDFStyles';
+import UplodPDFStyles from './style';
 import { useDataStore } from '../../store/DataStore';
 import ApartData from '@/api/ApartDataApi';
 
