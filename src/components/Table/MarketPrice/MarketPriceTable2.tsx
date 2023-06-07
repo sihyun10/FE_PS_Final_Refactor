@@ -1,28 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import Table from '@/components/common/Table';
-import { useDataStore } from '@/store/DataStore';
+import { getResData } from '@/utils/getResData';
 
 const MarketConditionsTable2 = () => {
-  const { id } = useParams();
-  const { responseItems } = useDataStore();
-  const [praPriceData, setPraPriceData] = useState<any>(null);
-
-  useEffect(() => {
-    if (!id) {
-      console.log('URL에 아이디가 제공되지 않았습니다.');
-      return;
-    }
-
-    const parsedId: number = +id;
-    const selectedItem: any = responseItems.find((item) => item.id === parsedId);
-
-    if (selectedItem) {
-      setPraPriceData(selectedItem.data.customData.filterDATA);
-    } else {
-      console.log(`아이디 ${id}에 해당하는 아이템을 찾을 수 없습니다.`);
-    }
-  }, [id]);
+  const praPriceData = getResData('customData.filterDATA');
 
   const result = praPriceData
     ? Object.entries(praPriceData)

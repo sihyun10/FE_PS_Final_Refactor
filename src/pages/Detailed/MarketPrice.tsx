@@ -1,35 +1,15 @@
 import styled from '@emotion/styled';
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import Chart from '@/components/Chart/';
-import { useDataStore } from '@/store/DataStore';
 import MarketPriceTable2 from '@/components/Table/MarketPrice/MarketPriceTable2';
+import { getResData } from '@/utils/getResData';
 
 const MarketPrice = () => {
-  const { id } = useParams();
-  const { responseItems } = useDataStore();
-  const [praPriceData, setPraPriceData] = useState<any>(null);
+  const praPriceData = getResData('customData.filterDATA');
 
   let minPrice = '';
   let maxPrice = '';
   let allMinPrice = '';
   let allMaxPrice = '';
-
-  useEffect(() => {
-    if (!id) {
-      console.log('URL에 아이디가 제공되지 않았습니다.');
-      return;
-    }
-
-    const parsedId: number = +id;
-    const selectedItem: any = responseItems.find((item) => item.id === parsedId);
-
-    if (selectedItem) {
-      setPraPriceData(selectedItem.data.customData.filterDATA);
-    } else {
-      console.log(`아이디 ${id}에 해당하는 아이템을 찾을 수 없습니다.`);
-    }
-  }, [id]);
 
   const result = praPriceData
     ? Object.entries(praPriceData)

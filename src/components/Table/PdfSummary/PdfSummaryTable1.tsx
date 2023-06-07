@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { Column } from 'react-table';
-import { useDataStore } from '@/store/DataStore';
 import Table, { TableProps } from '@/components/common/Table';
+import { getResData } from '@/utils/getResData';
 
 const COLUMNS: Column<{
   name: string;
@@ -34,26 +32,7 @@ const COLUMNS: Column<{
 ];
 
 const PdfSummaryTable1 = () => {
-  const { id } = useParams();
-  const { responseItems } = useDataStore();
-  const [resData, setResData] = useState();
-
-  console.log(responseItems);
-
-  useEffect(() => {
-    if (!id) {
-      console.log('URL에 아이디가 제공되지 않았습니다.');
-      return;
-    }
-    const parsedId: number = +id;
-    const selectedItem: any = responseItems.find((item) => item.id === parsedId);
-
-    if (selectedItem) {
-      setResData(selectedItem.data.ownership_list);
-    } else {
-      console.log(`아이디 ${id}에 해당하는 아이템을 찾을 수 없습니다.`);
-    }
-  }, [id]);
+  const resData = getResData('ownership_list');
 
   // 백엔드에서 obejct 타입으로 데이터를 response 함.  테이블에 넣기 위해 배열로 변경
   const ownerList = resData ? Object.values(resData) : [];
