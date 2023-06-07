@@ -1,34 +1,15 @@
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useDataStore } from '@/store/DataStore';
 import Map from '@/components/Map';
 import FacilityTable from '@/components/Table/Location/FacilityLists';
 import EstateAgentTable from '@/components/Table/Location/EstateAgentLists';
+import { getResData } from '@/utils/getResData';
 
 const Location = () => {
-  const { id } = useParams();
-  const { responseItems } = useDataStore();
-
-  const [address, setAddress] = useState<string>('');
   const [newLat, setLat] = useState<number>(0);
   const [newLng, setLng] = useState<number>(0);
+  const address = getResData('summary.newAddress');
   const link = `https://new.land.naver.com/complexes?ms=${newLat},${newLng},19`;
-
-  useEffect(() => {
-    if (!id) {
-      console.log('URL에 아이디가 제공되지 않았습니다.');
-      return;
-    }
-    const parsedId: number = +id;
-    const selectedItem: any = responseItems.find((item) => item.id === parsedId);
-
-    if (selectedItem) {
-      setAddress(selectedItem.data.summary.newAddress);
-    } else {
-      console.log(`아이디 ${id}에 해당하는 아이템을 찾을 수 없습니다.`);
-    }
-  }, [id]);
 
   // 주소 받으면 좌표로 변환해서 전역 상태로 저장
   useEffect(() => {

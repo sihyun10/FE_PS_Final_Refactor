@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
-import { Link, useParams } from 'react-router-dom';
-import { gray } from 'd3';
+import { useParams } from 'react-router-dom';
 import { useDataStore } from '../../store/DataStore';
-import { CommonButton } from '../common';
+import { getResData } from '@/utils/getResData';
 
 const PropertyInfo = () => {
   const { id } = useParams();
@@ -12,12 +11,6 @@ const PropertyInfo = () => {
 
   const [price, setPrice] = useState<any>(null);
   const [priceDate, setPriceDate] = useState<any>(null);
-
-  const [ownershipList, setOwnershipList] = useState<any[]>([]);
-
-  const [mortgage, setMortgage] = useState<any[]>([]);
-
-  const [maximumDebt, setMaximumDebt] = useState<any[]>([]);
 
   useEffect(() => {
     if (!id) {
@@ -33,27 +26,20 @@ const PropertyInfo = () => {
       console.log(`아이디 ${id}에 해당하는 아이템을 찾을 수 없습니다.`);
     }
   }, [id]);
+
+  const mortgage = Object.values(getResData('rights_other_than_ownership'));
+  const ownershipList = Object.values(getResData('ownership_list'));
+  const matximumDeb = Object.values(getResData('originalMoney'));
+  const dateKeys = Object.keys(getResData('customData.filterDATA')).map(Number);
+  const maxDateKey = Math.max(...dateKeys);
+  const maxDate = getResData('customData.filterDATA')[maxDateKey];
+
   useEffect(() => {
-    if (summary) {
-      const dateKeys = Object.keys(summary.data.customData.filterDATA).map(Number);
-      const ownershipListValues = Object.values(summary.data.ownership_list);
-      const ownership = Object.values(summary.data.rights_other_than_ownership);
-      const originalMoney = Object.values(summary.data.originalMoney);
-      setMaximumDebt(originalMoney);
-      setMortgage(ownership);
-      setOwnershipList(ownershipListValues);
-
-      if (dateKeys.length > 0) {
-        const maxDateKey = Math.max(...dateKeys);
-        const maxDate = summary.data.customData.filterDATA[maxDateKey];
-
-        if (maxDate.length > 0) {
-          setPriceDate(maxDateKey.toString());
-          setPrice(maxDate[maxDate.length - 1]);
-        }
-      }
+    if (maxDate.length > 0) {
+      setPriceDate(maxDateKey.toString());
+      setPrice(maxDate[maxDate.length - 1]);
     }
-  }, [summary]);
+  }, [maxDate]);
 
   return (
     <PraPropertyInfoWrap>
@@ -89,7 +75,7 @@ const PropertyInfo = () => {
           </ContentWrap>
         </FlexDiv>
         {ownershipList.length > 0 ? (
-          ownershipList.map((item, index) => (
+          ownershipList.map((item: any, index: any) => (
             // eslint-disable-next-line react/no-array-index-key
             <FlexDiv key={index}>
               <ContentWrap>

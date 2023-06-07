@@ -8,29 +8,25 @@ const MyReviews = () => {
   const [opened, setOpened] = useState<boolean>(false);
   const [message, setMessage] = useState<string>('');
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (mail.trim() === '') {
       setMessage('이메일을 제대로 기입하였는지 확인해 주세요.');
       setOpened(true);
       return;
     } else {
-      axios
-        .post('https://www.mollyteam.shop/presubscribe', {
+      try {
+        const response = await axios.post('https://www.mollyteam.shop/presubscribe', {
           email: mail,
-        })
-        .then((res) => {
-          console.log(res);
-          if (res.data.code === 200) {
-            setMessage('신청이 완료되었습니다.');
-            setOpened(true);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-          setMessage('오류가 발생했습니다. 다시 시도해 주세요.');
-          setOpened(true);
         });
+        if (response.data.code === 200) {
+          setMessage('신청이 완료되었습니다.');
+          setOpened(true);
+        }
+      } catch (error) {
+        setMessage('오류가 발생했습니다. 다시 시도해 주세요.');
+        setOpened(true);
+      }
     }
 
     setMail('');
