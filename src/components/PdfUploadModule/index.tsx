@@ -20,8 +20,8 @@ const PdfUploadModule = () => {
   const [labelWidth, setLabelWidth] = useState<number>(120);
 
   const [isModalOpen, setModalIsOpen] = useState<boolean>(false);
-  const [isErorrModalOpen, setErorrModalOpen] = useState<boolean>(false);
-  const [UploadErorrModalOpen, setUploadErorrModalOpen] = useState<boolean>(false);
+  const [isErrorModalOpen, setErrorModalOpen] = useState<boolean>(false);
+  const [UploadErrorModalOpen, setUploadErrorModalOpen] = useState<boolean>(false);
   const [modalMessage, setModalMessage] = useState<string>('');
 
   const [uploadProgress, setUploadProgress] = useState<number>(0);
@@ -96,7 +96,7 @@ const PdfUploadModule = () => {
   // 파일 업로드 부분
   const onFileUpload = async () => {
     if (!PDFfile) {
-      setErorrModalOpen(true);
+      setErrorModalOpen(true);
       return;
     }
     // 버튼 잠금
@@ -215,7 +215,7 @@ const PdfUploadModule = () => {
     // 에러메시지와 모달 오픈을 중복해서 처리하는 부분을 하나의 함수로 추출
     const openModalMessage = (message: string) => {
       setModalMessage(message);
-      setErorrModalOpen(true);
+      setErrorModalOpen(true);
     };
 
     if (PdfType) {
@@ -231,15 +231,15 @@ const PdfUploadModule = () => {
 
   const UploadErrorModal = () => {
     setModalIsOpen(false); // 업로드 실패시
-    setUploadErorrModalOpen(true); // 업로드 실패시
+    setUploadErrorModalOpen(true); // 업로드 실패시
   };
 
   return (
     <UploadContainer>
       <CommonModal
-        isOpen={isErorrModalOpen}
+        isOpen={isErrorModalOpen}
         onClose={() => {
-          setErorrModalOpen(false);
+          setErrorModalOpen(false);
         }}
         width={440}
         height={270}
@@ -252,7 +252,7 @@ const PdfUploadModule = () => {
             height={50}
             type="button"
             onClick={() => {
-              setErorrModalOpen(false);
+              setErrorModalOpen(false);
             }}
           >
             확인
@@ -261,9 +261,9 @@ const PdfUploadModule = () => {
       </CommonModal>
 
       <CommonModal
-        isOpen={UploadErorrModalOpen}
+        isOpen={UploadErrorModalOpen}
         onClose={() => {
-          setUploadErorrModalOpen(false);
+          setUploadErrorModalOpen(false);
         }}
         width={440}
         height={270}
@@ -276,7 +276,7 @@ const PdfUploadModule = () => {
             height={50}
             type="button"
             onClick={() => {
-              setUploadErorrModalOpen(false);
+              setUploadErrorModalOpen(false);
             }}
           >
             확인
