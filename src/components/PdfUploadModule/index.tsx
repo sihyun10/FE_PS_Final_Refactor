@@ -19,17 +19,17 @@ const PdfUploadModule = () => {
   const [fileName, setFileName] = useState<string>('');
   const [labelWidth, setLabelWidth] = useState<number>(120);
 
-  const [isModalOpen, setModalIsOpen] = useState(false);
-  const [isErorrModalOpen, setErorrModalOpen] = useState(false);
-  const [UploadErorrModalOpen, setUploadErorrModalOpen] = useState(false);
+  const [isModalOpen, setModalIsOpen] = useState<boolean>(false);
+  const [isErorrModalOpen, setErorrModalOpen] = useState<boolean>(false);
+  const [UploadErorrModalOpen, setUploadErorrModalOpen] = useState<boolean>(false);
   const [modalMessage, setModalMessage] = useState<string>('');
 
-  const [uploadProgress, setUploadProgress] = useState(0);
-  const [downloadProgress, setDownloadProgress] = useState(0);
-  const [isUploadComplete, setIsUploadComplete] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState<number>(0);
+  const [downloadProgress, setDownloadProgress] = useState<number>(0);
+  const [isUploadComplete, setIsUploadComplete] = useState<boolean>(false);
 
   const [cancelToken, setCancelToken] = useState<CancelTokenSource | null>(null);
-  const [dataStoreId, setDataStoreId] = useState(0);
+  const [dataStoreId, setDataStoreId] = useState<number>(0);
   const { addResponseItem } = useDataStore();
   const navigate = useNavigate();
 
