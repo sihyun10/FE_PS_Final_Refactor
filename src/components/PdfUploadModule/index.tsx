@@ -212,18 +212,21 @@ const PdfUploadModule = () => {
   };
 
   const ErrorModal = (PdfType: boolean, PdfSize: boolean) => {
-    if (PdfType) {
-      setModalMessage('파일이 pdf 파일이 아닙니다.');
+    // 에러메시지와 모달 오픈을 중복해서 처리하는 부분을 하나의 함수로 추출
+    const openModalMessage = (message: string) => {
+      setModalMessage(message);
       setErorrModalOpen(true);
+    };
+
+    if (PdfType) {
+      openModalMessage('파일이 pdf 파일이 아닙니다.');
       return;
     }
     if (PdfSize) {
-      setModalMessage(`파일 사이즈가 ${MAX_FILE_SIZE}MB 보다 큽니다.`);
-      setErorrModalOpen(true);
+      openModalMessage(`파일 사이즈가 ${MAX_FILE_SIZE}MB 보다 큽니다.`);
       return;
     }
-    setModalMessage('파일이 잘못되었거나, 알 수 없는 오류가 발생했습니다.');
-    setErorrModalOpen(true);
+    openModalMessage('파일이 잘못되었거나, 알 수 없는 오류가 발생했습니다.');
   };
 
   const UploadErrorModal = () => {
