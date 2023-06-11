@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styled from '@emotion/styled';
+import { LoadingBarContainer, LoadingBarWrapper, ProgressBar } from './style';
 
 interface LoadingBarProps {
   start: boolean;
@@ -24,45 +24,22 @@ const LoadingBar = ({
   }, [start, progress]);
 
   return (
-    <LoadingBarWrap>
-      <LoadingBarContainer width={width}>
+    <LoadingBarContainer>
+      <LoadingBarWrapper width={width}>
         <ProgressBar progress={internalProgress} />
-      </LoadingBarContainer>
+      </LoadingBarWrapper>
       <div>{internalProgress}%</div>
       {type === '다운로드' && progress === 100 ? (
         <div>분석이 완료되었습니다.</div>
       ) : (
         <div>{type}중 입니다</div>
       )}
-    </LoadingBarWrap>
+    </LoadingBarContainer>
   );
 };
 
 LoadingBar.defaultProps = {
   width: 400,
 };
-const LoadingBarWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-`;
-
-const LoadingBarContainer = styled.div<{ width: number }>`
-  background-color: #ffffff;
-  border: 1px solid #1a237e;
-  border-radius: 8px;
-  width: ${({ width }) => `${width}px`};
-
-  height: 10px;
-  overflow: hidden;
-`;
-
-const ProgressBar = styled.div<{ progress: number }>`
-  background-color: #1a237e;
-  width: ${({ progress }) => `${progress}%`};
-  height: 100%;
-  transition: width 0.3s ease-in-out;
-`;
 
 export default LoadingBar;
