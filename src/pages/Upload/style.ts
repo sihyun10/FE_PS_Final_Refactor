@@ -35,17 +35,16 @@ export const HelpLinks = styled.span`
   flex-direction: column;
   margin-top: 65px;
   margin-bottom: 65px;
-
   width: 684px;
 `;
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: auto;
   align-items: center;
+  width: 100%;
+  height: auto;
   margin-top: 56px;
-  margin-right: 250px;
 `;
 
 export const PageHeader = styled.div`

@@ -4,14 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import axios, { AxiosProgressEvent, CancelTokenSource } from 'axios';
 import { instance } from '../../api/UploadApi';
 import DragAndDrop from './DragAndDrop';
-import PDfLogo from '../../assets/PdfLogo.svg';
-import { CommonButton, CommonModal } from '../common';
-import SpinnerButton from './SpinnerButton';
-import LoadingBar from './LoadingBar';
-import CancelButton from './CancelButton';
-import UplodPDFStyles from './style';
+import { UploadContainer, HeaderTitle, Subtitle } from './style';
 import { useDataStore } from '../../store/DataStore';
 import ApartData from '@/api/ApartDataApi';
+import UploadModals from './UploadModals';
+import FileSelectInput from './FileSelectInput';
 
 const PdfUploadModule = () => {
   const [PDFfile, setPDFfile] = useState<File | null>(null);
@@ -21,7 +18,7 @@ const PdfUploadModule = () => {
 
   const [isModalOpen, setModalIsOpen] = useState(false);
   const [isErorrModalOpen, setErorrModalOpen] = useState(false);
-  const [UploadErorrModalOpen, setUploadErorrModalOpen] = useState(false);
+  const [isUploadErorrModalOpen, setUploadErorrModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState<string>('');
 
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -33,7 +30,7 @@ const PdfUploadModule = () => {
   const { addResponseItem } = useDataStore();
   const navigate = useNavigate();
 
-  // 파일 사이즈 할당 mb단위로 ex 30m
+  // 파일 사이즈 할당 mb단위.
   const MAX_FILE_SIZE = 100;
 
   // 초기화
@@ -67,6 +64,7 @@ const PdfUploadModule = () => {
       return file.name;
     }
   };
+
   // 폼데이타에 집어넣기 서버와 통신하기 위함 인코딩
   const createFormData = (file: File): FormData => {
     const formData = new FormData();
@@ -93,6 +91,7 @@ const PdfUploadModule = () => {
     setLabelWidth(updatedLabelWidth);
     event.target.value = '';
   };
+
   // 파일 업로드 부분
   const onFileUpload = async () => {
     if (!PDFfile) {
@@ -135,10 +134,8 @@ const PdfUploadModule = () => {
       setIsUploading(false);
     }
   };
-  // 업로드 로딩바 완료시 시간지연
 
   // 서버 전송 하기위한 비동기 처리
-
   const uploadFileToServer = async (formData: FormData): Promise<any> => {
     try {
       const source = axios.CancelToken.source(); // 요청을 취소할 때 사용할 CancelTokenSource를 생성합니다.
@@ -158,7 +155,6 @@ const PdfUploadModule = () => {
           }
         },
       });
-
       return response.data;
     } catch (error) {
       if (axios.isCancel(error)) {
@@ -176,6 +172,7 @@ const PdfUploadModule = () => {
     }
   };
 
+  // 업로드 로딩바 완료시 시간지연
   useEffect(() => {
     let timer: number;
     if (uploadProgress === 100) {
@@ -202,10 +199,6 @@ const PdfUploadModule = () => {
     }
   };
 
-  // pdf 파일 선택 취소 시 초기화
-  const handledDeletePDFfile = (): void => {
-    resetFileState();
-  };
   // 이동
   const ViewChange = () => {
     navigate(`/review/${dataStoreId}/pdfsummary`);
@@ -233,176 +226,41 @@ const PdfUploadModule = () => {
 
   return (
     <UploadContainer>
-      <CommonModal
-        isOpen={isErorrModalOpen}
-        onClose={() => {
-          setErorrModalOpen(false);
-        }}
-        width={440}
-        height={270}
-      >
-        <ModalContents>
-          <HeaderTitle>파일 오류 </HeaderTitle>
-          <div style={{ color: 'red' }}>{modalMessage}</div>
-          <CommonButton
-            width={200}
-            height={50}
-            type="button"
-            onClick={() => {
-              setErorrModalOpen(false);
-            }}
-          >
-            확인
-          </CommonButton>
-        </ModalContents>
-      </CommonModal>
+      <UploadModals
+        isErorrModalOpen={isErorrModalOpen}
+        isUploadErorrModalOpen={isUploadErorrModalOpen}
+        isModalOpen={isModalOpen}
+        isUploading={isUploading}
+        isUploadComplete={isUploadComplete}
+        modalMessage={modalMessage}
+        fileName={fileName}
+        downloadProgress={downloadProgress}
+        uploadProgress={uploadProgress}
+        setErorrModalOpen={setErorrModalOpen}
+        setUploadErorrModalOpen={setUploadErorrModalOpen}
+        setModalIsOpen={setModalIsOpen}
+        handleCancelUpload={handleCancelUpload}
+        ViewChange={ViewChange}
+      />
+      <HeaderTitle>등기부등본 파일 첨부</HeaderTitle>
+      <Subtitle>
+        {`*단일 PDF(${MAX_FILE_SIZE}MB 이하)만 업로드 가능합니다.`}
+        <br />
+        또한, 요약본 포함 등기부 파일만 심사진행이 가능합니다.
+      </Subtitle>
 
-      <CommonModal
-        isOpen={UploadErorrModalOpen}
-        onClose={() => {
-          setUploadErorrModalOpen(false);
-        }}
-        width={440}
-        height={270}
-      >
-        <ModalContents>
-          <HeaderTitle>업로드 오류 </HeaderTitle>
-          <div style={{ color: 'red' }}>올바른 pdf파일이 아니거나 서버의 통신문제가 있습니다.</div>
-          <CommonButton
-            width={200}
-            height={50}
-            type="button"
-            onClick={() => {
-              setUploadErorrModalOpen(false);
-            }}
-          >
-            확인
-          </CommonButton>
-        </ModalContents>
-      </CommonModal>
-
-      <CommonModal
-        isOpen={isModalOpen}
-        onClose={() => {
-          handleCancelUpload();
-          setModalIsOpen(false);
-        }}
-        width={550}
-        height={420}
-        lockBackground
-      >
-        <ModalContents>
-          <div>
-            {isUploading ? (
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '10px',
-                }}
-              >
-                <HeaderTitle>
-                  지금 등기부등본에서
-                  <br />
-                  주소 정보를 읽어오고 있습니다.
-                </HeaderTitle>
-              </div>
-            ) : (
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '10px',
-                }}
-              >
-                <HeaderTitle>등기부 등본 분석이 완료되었습니다</HeaderTitle>
-              </div>
-            )}
-          </div>
-          <div>
-            <div>{fileName}</div>
-            <br />
-            {isUploadComplete ? (
-              <LoadingBar type="다운로드" progress={downloadProgress} start={isModalOpen} />
-            ) : (
-              <LoadingBar type="업로드" progress={uploadProgress} start={isModalOpen} />
-            )}
-          </div>
-          {isUploading ? (
-            <CommonButton
-              bgcolor="gray"
-              width={250}
-              height={50}
-              type="button"
-              onClick={handleCancelUpload}
-            >
-              창닫기
-            </CommonButton>
-          ) : (
-            <CommonButton width={400} height={50} type="button" onClick={ViewChange}>
-              상세내역 페이지로 이동
-            </CommonButton>
-          )}
-        </ModalContents>
-      </CommonModal>
-
-      <UploadHeader>
-        <HeaderTitle>등기부등본 파일 첨부</HeaderTitle>
-        <Subtitle>
-          {`*단일 PDF(${MAX_FILE_SIZE}MB 이하)만 업로드 가능합니다.`}
-          <br />
-          또한, 요약본 포함 등기부 파일만 심사진행이 가능합니다.
-        </Subtitle>
-      </UploadHeader>
-      <UploadContent>
-        <DragAndDrop handleInputFile={onFileChange}>
-          <DropZone fileName={fileName}>
-            <div style={{ height: '35px' }}>{!fileName && <PDFLogoImg src={PDfLogo} />}</div>
-            <FileSelectionWrapper>
-              <FileInputLabel labelWidth={labelWidth} selected={Boolean(fileName)}>
-                <input type="file" onChange={onFileChange} disabled={isUploading} />
-                <FileNameSpan>{fileName || '파일선택'}</FileNameSpan>
-              </FileInputLabel>
-              {!fileName || (
-                <>
-                  <SpinnerButton isUploading={isUploading} filename={fileName} />
-                  <CancelButton onClick={handledDeletePDFfile} disabled={isUploading} />
-                </>
-              )}
-            </FileSelectionWrapper>
-
-            {!fileName ? (
-              <DropTitle>또는 여기로 파일을 끌어주세요.</DropTitle>
-            ) : (
-              <UploadButtonWrapper>
-                <CommonButton height={40} onClick={onFileUpload} disabled={isUploading}>
-                  업로드
-                </CommonButton>
-              </UploadButtonWrapper>
-            )}
-          </DropZone>
-        </DragAndDrop>
-      </UploadContent>
+      <DragAndDrop handleInputFile={onFileChange}>
+        <FileSelectInput
+          fileName={fileName}
+          labelWidth={labelWidth}
+          isUploading={isUploading}
+          onFileChange={onFileChange}
+          onFileUpload={onFileUpload}
+          resetFileState={resetFileState}
+        />
+      </DragAndDrop>
     </UploadContainer>
   );
 };
 
 export default PdfUploadModule;
-
-const {
-  UploadContainer,
-  UploadHeader,
-  HeaderTitle,
-  Subtitle,
-  UploadContent,
-  DropZone,
-  FileInputLabel,
-  FileNameSpan,
-  DropTitle,
-  PDFLogoImg,
-  ModalContents,
-  FileSelectionWrapper,
-  UploadButtonWrapper,
-} = UplodPDFStyles;
