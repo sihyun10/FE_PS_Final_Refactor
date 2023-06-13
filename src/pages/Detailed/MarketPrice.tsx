@@ -118,7 +118,7 @@ const PraPriceNewHighLow = styled.div`
   flex-direction: column;
   gap: 12px;
   width: 172px;
-  height: 35ps;
+  height: 35px;
   text-align: center;
   gap: 12px;
 `;
@@ -141,9 +141,9 @@ const PraHR = styled.div`
 `;
 
 const PraPriceChart = styled.div`
-  max-width: 100%;
+  max-width: 520px;
   height: 100%;
-  padding: 24px;
+  padding: 25px;
   border: 1px solid #cccccc;
   border-radius: 5px;
 `;
