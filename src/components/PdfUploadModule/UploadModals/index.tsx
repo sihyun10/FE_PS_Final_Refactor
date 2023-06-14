@@ -3,16 +3,24 @@ import { CommonButton, CommonModal } from '../../common';
 import { ModalContents, ModalTitle } from './style';
 import LoadingBar from '../LoadingBar';
 
-// 에러 모달 두개는 구조가 똑같으니까 함수로 추출해서 재사용함으로써 중복 코드 줄이기
-const renderErrorModal = (title: string, message: string, onClose: () => void) => {
+// 에러 모달 두개는 구조가 똑같으니까 컴포넌트로 추출해서 재사용함으로써 중복 코드 줄이기
+interface ErrorModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  message: string;
+}
+const ErrorModal = ({ isOpen, onClose, title, message }: ErrorModalProps) => {
   return (
-    <ModalContents>
-      <ModalTitle>{title}</ModalTitle>
-      <div style={{ color: 'red' }}>{message}</div>
-      <CommonButton width={200} height={50} type="button" onClick={onClose}>
-        확인
-      </CommonButton>
-    </ModalContents>
+    <CommonModal isOpen={isOpen} onClose={onClose} width={440} height={270}>
+      <ModalContents>
+        <ModalTitle>{title}</ModalTitle>
+        <div style={{ color: 'red' }}>{message}</div>
+        <CommonButton width={200} height={50} type="button" onClick={onClose}>
+          확인
+        </CommonButton>
+      </ModalContents>
+    </CommonModal>
   );
 };
 
@@ -50,26 +58,18 @@ const UploadModals = ({
   ViewChange,
 }: ModalProps) => (
   <>
-    <CommonModal
+    <ErrorModal
       isOpen={isErorrModalOpen}
       onClose={() => setErorrModalOpen(false)}
-      width={440}
-      height={270}
-    >
-      {renderErrorModal('파일 오류', modalMessage, () => setErorrModalOpen(false))}
-    </CommonModal>
-    <CommonModal
+      title="파일 오류"
+      message={modalMessage}
+    />
+    <ErrorModal
       isOpen={isUploadErorrModalOpen}
       onClose={() => setUploadErorrModalOpen(false)}
-      width={440}
-      height={270}
-    >
-      {renderErrorModal(
-        '업로드 오류',
-        '올바른 pdf파일이 아니거나 서버의 통신문제가 있습니다.',
-        () => setUploadErorrModalOpen(false),
-      )}
-    </CommonModal>
+      title="업로드 오류"
+      message="올바른 pdf파일이 아니거나 서버의 통신문제가 있습니다."
+    />
     <CommonModal
       isOpen={isModalOpen}
       onClose={() => {
