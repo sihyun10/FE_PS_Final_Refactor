@@ -1,31 +1,32 @@
-# FE_PS_Final_Refactor
-몰리턴 기업 연계 프로젝트 코드리뷰 및 리팩토링
+# 프로젝트 개요
+몰리턴 기업 연계 프로젝트 코드리뷰 및 리팩토링 프로젝트입니다.
 
-# 브랜치 분리 계획(PM)
-main브랜치를 따로 두고, 각자의 브랜치를 따로 만든다. 각자 리펙토링한 부분을 각자의 브랜치에 올리고, 서로 비교/분석하여 보다 아는 방향으로 결정된 사항을 main에 merge한다.
+# 프로젝트 목적
+코드 리뷰와 리팩토링을 시도하며 어떻게 리팩토링 하고, 왜 그렇게 했는지를 기준을 고민해 보기위해 본 프로젝트를 진행하였습니다.
 
-# 커밋 작성 규칙
-코드 간소화 및 고도화(refactor)   
-디렉토리 수정(move)   
-하나의 파일이나 코드를 다수의 파일로 분리(split)   
-여러개의 파일이나 코드를 하나의 파일에 통합(combine)   
-필요없는 파일이나 코드를 삭제(del)   
-기능 추가(feat)   
-css 변경(style)   
-에러 수정(fix)   
-문서 수정(docs)
+# 리팩토링 대상
+본 과정에서 코드리뷰/리팩토링의 대상은 FE-PS 1기 2조의 파이널 프로젝트 코드입니다.   
+원본 프로젝트의 레포와 데모 사이트는 아래 링크를 참고합니다.   
+[원본 프로젝트](https://github.com/growing-devs/easy-to-real-estate-frontend)   
+[원본 데모](https://zesty-faun-019504.netlify.app/)
 
-# 라벨
-코드 수정 (refactor)   
-디렉토리 수정 (directory)   
-환경 설정 수정 (conf)   
-기능 및 컴포넌트 추가 (feature)   
-css 변경 (style)   
-조사 및 공부 (research)   
-테스트 (test)   
-문서 작성 및 수정(docs)   
+# 이번 프로젝트에서 팀으로써의 규칙
+프로젝트 관리를 위해 아래와 같이 규칙을 세우고 이에 따라 진행합니다.   
+[깃허브 관리 규칙](https://github.com/sihyun10/FE_PS_Final_Refactor/wiki/PM-Convention)   
+[팀 컨벤션](https://github.com/sihyun10/FE_PS_Final_Refactor/wiki/Code-Convention)   
+[커밋 컨벤션](https://github.com/sihyun10/FE_PS_Final_Refactor/wiki/Commit-Convention)   
 
-# 마일 스톤 설정
-1단계 : 컨벤션(팀 전체의 공통 규칙) 정하기   
-2단계 : 기능 보완하기 (기능 리펙토링, 미구현 기능 완성 등등)   
-3단계 : 종합하고 정리하기.
+# 코드 리뷰 내용
+본 프로젝트에서 다음과 같은 내용을 중점적으로 살펴보았습니다.   
+[디렉토리 설계](https://github.com/sihyun10/FE_PS_Final_Refactor/wiki/Code-Review:-Directory-design)   
+[데이터 처리 프로세스](https://github.com/sihyun10/FE_PS_Final_Refactor/wiki/Code-Review:-data-process)
+
+# 리팩토링 내용
+본 프로제트에서 리팩토링을 시도한 내용입니다.   
+[디렉토리 정리 및 재분류](https://github.com/sihyun10/FE_PS_Final_Refactor/wiki/Refactoring:-Directory-cleanup-and-reclassification)   
+[중복되는 로직 제거](https://github.com/sihyun10/FE_PS_Final_Refactor/wiki/Refactoring:-Eliminating-code-duplication)   
+[업로드 모듈](https://github.com/sihyun10/FE_PS_Final_Refactor/wiki/Refactoring:-Pdf-Upload-Module)   
+[ApartDataApi: 가독성 개선](https://github.com/sihyun10/FE_PS_Final_Refactor/wiki/Refactoring:-ApartDataApi)   
+[UploadApi: 불필요한 래핑 제거](https://github.com/sihyun10/FE_PS_Final_Refactor/wiki/Refactoring:-UploadApi)   
+[CommonButton: 재사용성 향상](https://github.com/sihyun10/FE_PS_Final_Refactor/wiki/Refactoring:-CommonButton)   
+
